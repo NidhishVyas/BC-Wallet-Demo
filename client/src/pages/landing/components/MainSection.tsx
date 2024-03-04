@@ -58,15 +58,6 @@ export const MainSection: React.FC = () => {
           Try Demo &nbsp;
           <FiArrowRight className="inline h-6 pb-1" />
         </motion.button>
-        <motion.button
-          variants={fade}
-          whileHover={buttonHover}
-          className="bg-white dark:bg-bcgov-blue text-black dark:text-white py-3 px-5 mx-8 mt-4 rounded-lg font-semibold shadow-sm dark:shadow-none select-none "
-          onClick={() => null}
-        >
-          Get to know us &nbsp;
-          <FiExternalLink className="inline h-6 pb-1" />
-        </motion.button>
       </div>
     </motion.div>
   )
@@ -94,16 +85,6 @@ export const MainSection: React.FC = () => {
           Get started &nbsp;
           <FiArrowRight className="inline h-6 pb-1" />
         </motion.button>
-        <a href="https://digital.gov.bc.ca/digital-trust/" target="_blank">
-          <motion.button
-            variants={fadeDelay}
-            whileHover={buttonHover}
-            className="bg-white dark:bg-bcgov-gold text-black dark:text-bcgov-black py-3 px-5 ml-4 rounded-lg font-semibold shadow-sm dark:shadow-none select-none "
-          >
-            <p className="inline">Get to know us &nbsp;</p>
-            <FiExternalLink className="inline h-6 pb-1" />
-          </motion.button>
-        </a>
       </div>
     </motion.div>
   )

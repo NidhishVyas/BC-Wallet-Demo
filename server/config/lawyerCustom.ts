@@ -5,8 +5,8 @@ import { getDateInt } from '../src/utils/dateint'
 const now = () => Math.floor(new Date().getTime() / 1000)
 
 export const lawyerCustom: CustomCharacter = {
-  name: 'Joyce',
-  type: 'Lawyer',
+  name: 'Bob',
+  type: 'Chevrolet',
   image: '/public/lawyer2/lawyer2.svg',
   description: 'Joyce is a member of the Law Society of British Columbia looking to access court materials online.',
   revocationInfo: [
@@ -61,7 +61,7 @@ export const lawyerCustom: CustomCharacter = {
     {
       screenId: 'PICK_CHARACTER',
       title: 'Meet Joyce',
-      text: "Meet Joyce (that's you in this demo!). Joyce is a lawyer in good standing with The Law Society of British Columbia. We know this because she's got her physical Law Society of British Columbia Member Card. She's also a resident of British Columbia and has gone through the process to prove her identity with Service BC and has obtained a physical BC Services Card. This has allowed her to use in person services.",
+      text: "Meet Bob (that's you in this demo!). Bob is a construction engineer and working in a company. He owns a Chevrolet. He feels having digital credentials is way easier and wants to get them.",
     },
     {
       screenId: 'SETUP_START',

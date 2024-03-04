@@ -3,7 +3,7 @@ import type { CustomCharacter } from '../src/content/types'
 import { getDateInt } from '../src/utils/dateint'
 export const studentCustom: CustomCharacter = {
   name: 'Alice',
-  type: 'Student',
+  type: 'Ford',
   image: '/public/student/student.svg',
   revocationInfo: [
     {
@@ -50,7 +50,7 @@ export const studentCustom: CustomCharacter = {
     {
       screenId: 'PICK_CHARACTER',
       title: 'Meet Alice',
-      text: "Meet Alice (that's you in this demo!). Alice is a student at BestBC College. To help make student life easier, BestBC College is going to offer Alice a digital Student Card to put in her BC Wallet.",
+      text: "Meet Alice (that's you in this demo!). Alice is a student at a college. To help make student life easier, Alice took a Ford vehicle and now needs digital credentials to verify her driving license.",
     },
     {
       screenId: 'SETUP_START',
@@ -66,8 +66,8 @@ export const studentCustom: CustomCharacter = {
     },
     {
       screenId: 'CONNECT',
-      title: 'Connect with BestBC College',
-      text: 'Imagine, as Alice, you are logged into the BestBC College website (see below). They want to offer you a Digital Student Card. Use your BC Wallet to scan the QR code from the website.',
+      title: 'Connect with CA (Certificate Authority)',
+      text: 'Imagine, as Alice, you are connected with a CA. They want to offer you your credentials. Use your app to scan the QR code from the website.',
       image: '/public/student/onboarding-connect-light.svg',
       issuer_name: 'BestBC College',
     },
@@ -108,12 +108,12 @@ export const studentCustom: CustomCharacter = {
   useCases: [
     {
       id: 'clothesOnline',
-      name: 'Cool Clothes Online',
+      name: 'Infrastructure',
       screens: [
         {
           screenId: 'START',
-          title: 'Getting a student discount',
-          text: "Alice (that's you in this demo!) can get a student discount on her online purchase. In this example, you will just tell Cool Clothes Online you're a student.",
+          title: 'Connecting with infrastructure',
+          text: "Alice (that's you in this demo!) needs to send her credentials to connect to the infrastrcture. In this example, you will just send the infrastructure your complete credentials.",
           image: '/public/student/useCases/store/card-school.svg',
         },
         {
@@ -153,7 +153,7 @@ export const studentCustom: CustomCharacter = {
     },
     {
       id: 'study',
-      name: 'BestBC College',
+      name: 'Bob',
       screens: [
         {
           screenId: 'START',
