@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "license": "Apache-2.0",
-  "description": "BC Wallet - Verifiable Credential Demo",
+  "description": "FHWA - Verifiable Credential Demo",
   "repository": {
     "url": "https://github.com/bcgov/bc-wallet-demo",
     "type": "git"
@@ -22,7 +22,7 @@
     "client:build": "yarn workspace client build",
     "server:dev": "yarn workspace server dev",
     "server:build": "yarn workspace server build",
-    "dev": "concurrently -n 'client,server ' -c 'green.bold,red.bold' 'yarn client:start' 'yarn server:dev'",
+    "dev": "concurrently -n \"client,server\" -c \"green.bold,red.bold\" \"yarn client:start\" \"yarn server:dev\"",
     "test": "yarn run cypress open",
     "build": "yarn workspace client build && yarn workspace server build",
     "cy:open": "cypress open",
