@@ -24,7 +24,7 @@ import { RevocationContainer } from './components/RevocationContainer'
 import { UseCaseContainer } from './components/UseCaseContainer'
 
 export const DashboardPage: React.FC = () => {
-  useTitle('Dashboard | BC Wallet Self-Sovereign Identity Demo')
+  useTitle('Dashboard | FHWA Self-Sovereign Identity Demo')
 
   const navigate = useNavigate()
   const dispatch = useAppDispatch()

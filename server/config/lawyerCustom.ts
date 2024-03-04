@@ -66,7 +66,7 @@ export const lawyerCustom: CustomCharacter = {
     {
       screenId: 'SETUP_START',
       title: "Let's get started!",
-      text: 'BC Wallet is a new app for storing and using credentials on your smartphone. Credentials are things like IDs, licenses and diplomas. \nUsing your BC Wallet is fast and simple. In the future it can be used online and in person.You approve every use, and share only what is needed. \nIn this demo, you will use two credentials to prove who you are and access court materials online instead of in-person.',
+      text: 'FHWA is a new app for storing and using credentials on your smartphone. Credentials are things like IDs, licenses and diplomas. \nUsing your FHWA is fast and simple. In the future it can be used online and in person.You approve every use, and share only what is needed. \nIn this demo, you will use two credentials to prove who you are and access court materials online instead of in-person.',
       image: '/public/lawyer2/onboarding/scan.svg',
     },
     {
@@ -84,14 +84,14 @@ export const lawyerCustom: CustomCharacter = {
     {
       screenId: 'CONNECT_LSBC',
       title: 'Get your lawyer credential',
-      text: 'Joyce is now ready to be issued her Law Society of British Columbia Member Card. She has logged into her member portal and is ready to accept a digital version of that card. Open the BC Wallet app on your phone, hit the scan button and accept.',
+      text: 'Joyce is now ready to be issued her Law Society of British Columbia Member Card. She has logged into her member portal and is ready to accept a digital version of that card. Open the FHWA app on your phone, hit the scan button and accept.',
       image: '/public/lawyer2/onboarding/lawyerCredPhone.svg',
       issuer_name: 'Law Society of BC (Demo)',
     },
     {
       screenId: 'ACCEPT_LSBC',
       title: 'Accept your lawyer credential',
-      text: 'Check your phone. You’ve received a credential offer from the Law Society of British Columbia in your BC Wallet. You can use this credential to prove you’re a lawyer online.',
+      text: 'Check your phone. You’ve received a credential offer from the Law Society of British Columbia in your FHWA. You can use this credential to prove you’re a lawyer online.',
       image: '/public/lawyer2/onboarding/lawyerCredPhone.svg',
       credentials: [
         {
@@ -126,14 +126,14 @@ export const lawyerCustom: CustomCharacter = {
     {
       screenId: 'CONNECT_PERSON',
       title: 'Get Person credential',
-      text: 'Joyce gets her Person credential from the BC Services Card app. She starts the process within BC Wallet. For this demo you will scan this QR code to receive the credential offer.',
+      text: 'Joyce gets her Person credential from the BC Services Card app. She starts the process within FHWA. For this demo you will scan this QR code to receive the credential offer.',
       image: '/public/lawyer2/onboarding/personCredPhone.svg',
       issuer_name: 'Service BC (Demo)',
     },
     {
       screenId: 'ACCEPT_PERSON',
       title: 'Accept your Person credential',
-      text: 'Check your phone. You’ve received a credential offer from Service BC in your BC Wallet. You can use this credential to prove who you are online.',
+      text: 'Check your phone. You’ve received a credential offer from Service BC in your FHWA. You can use this credential to prove who you are online.',
       image: '/public/lawyer2/onboarding/personCredPhone.svg',
       credentials: [
         {
@@ -214,7 +214,7 @@ export const lawyerCustom: CustomCharacter = {
         {
           screenId: 'PROOF',
           title: 'Confirm the information to send',
-          text: 'BC Wallet will now ask you to confirm what to send. Notice how you’re not sharing your entire credential. Court Services Branch is requesting that you prove only what is needed.',
+          text: 'FHWA will now ask you to confirm what to send. Notice how you’re not sharing your entire credential. Court Services Branch is requesting that you prove only what is needed.',
           requestOptions: {
             title: 'Court Services Branch (DEMO) Request',
             text: 'Court Services Branch (DEMO) would like some of your personal information.',
@@ -261,7 +261,7 @@ export const lawyerCustom: CustomCharacter = {
         {
           screenId: 'PROOF',
           title: 'Confirm the information to send',
-          text: 'BC Wallet will now ask you to confirm what to send. Notice how you’re not sharing your entire credential. The Court Library is requesting that you prove only what is needed.',
+          text: 'FHWA will now ask you to confirm what to send. Notice how you’re not sharing your entire credential. The Court Library is requesting that you prove only what is needed.',
           requestOptions: {
             title: 'Court Library (DEMO) Request',
             text: 'Court Library (DEMO) would like some of your personal information.',
@@ -291,26 +291,26 @@ export const lawyerCustom: CustomCharacter = {
     },
     {
       id: 'attestation',
-      name: 'BC Wallet Attestation',
+      name: 'FHWA Attestation',
       hidden: true,
       screens: [
         {
           screenId: 'START',
-          title: 'Verify a BC Wallet application',
-          text: 'Verify that you are using a valid BC Wallet application.',
+          title: 'Verify a FHWA application',
+          text: 'Verify that you are using a valid FHWA application.',
           image: '/public/lawyer2/useCases/courtServices/bothCreds.svg',
         },
         {
           screenId: 'CONNECTION',
           title: 'Connect to Attestation Service',
-          text: 'You\'re now ready to prove you\'re using a valid BC Wallet application. Scan the QR code.',
+          text: 'You\'re now ready to prove you\'re using a valid FHWA application. Scan the QR code.',
           image: '/public/lawyer2/useCases/courtServices/courtServicesOverlay.png',
-          verifier: { name: 'BC Wallet Attestation', icon: '/public/lawyer2/connection/bc-logo.png' },
+          verifier: { name: 'FHWA Attestation', icon: '/public/lawyer2/connection/bc-logo.png' },
         },
         {
           screenId: 'PROOF',
           title: 'Confirm the information to send',
-          text: 'BC Wallet will now ask you to confirm what to send. Notice how you’re not sharing your entire credential.',
+          text: 'FHWA will now ask you to confirm what to send. Notice how you’re not sharing your entire credential.',
           requestOptions: {
             title: 'Attestation (DEMO) Request',
             text: 'Attestation (DEMO) would like some of your personal information.',
@@ -333,7 +333,7 @@ export const lawyerCustom: CustomCharacter = {
         {
           screenId: 'STEP_END',
           title: "You're done!",
-          text: 'You’ve proved to the Attestation Service that you’re using a valid BC Wallet application. It only took a few seconds and you revealed minimal information that Attestation Service could easily and automatically trust.',
+          text: 'You’ve proved to the Attestation Service that you’re using a valid FHWA application. It only took a few seconds and you revealed minimal information that Attestation Service could easily and automatically trust.',
           image: '/public/lawyer2/onboarding/lawyer2Success.svg',
         },
       ],
