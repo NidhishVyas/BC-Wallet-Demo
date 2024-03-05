@@ -7,7 +7,7 @@ export const studentCustom: CustomCharacter = {
   image: '/public/student/student.svg',
   revocationInfo: [
     {
-      credentialName: 'Student Card',
+      credentialName: 'Proof',
       credentialIcon: '/public/student/icon-student.svg',
       title: 'Revoke your Student Card',
       description:
@@ -55,13 +55,13 @@ export const studentCustom: CustomCharacter = {
     {
       screenId: 'SETUP_START',
       title: "Let's get started!",
-      text: 'BC Wallet is a new app for storing and using credentials on your smartphone. Credentials are things like IDs, licenses and diplomas. \nUsing your BC Wallet is fast and simple. In the future it can be used online and in person. You approve every use, and share only what is needed. \nIn this demo, you will use two credentials to prove who you are and access court materials online instead of in-person.',
-      image: '/public/common/getStarted.svg',
+      text: 'FHWA is a new app for storing and using credentials on your smartphone. Credentials are things like IDs, licenses and diplomas. \nUsing your FHWA is fast and simple. In the future it can be used online and in person. You approve every use, and share only what is needed. \nIn this demo, you will use two credentials to prove who you are and access court materials online instead of in-person.',
+      image: '/public/common/FHWA-Logo.svg',
     },
     {
       screenId: 'CHOOSE_WALLET',
-      title: 'Install BC Wallet',
-      text: 'First, install the BC Wallet app onto your smartphone. Select the button below for instructions and the next step.',
+      title: 'Install FHWA',
+      text: 'First, install the FHWA app onto your smartphone. Select the button below for instructions and the next step.',
       image: '/public/common/app-store-screenshots.png',
     },
     {
@@ -74,7 +74,7 @@ export const studentCustom: CustomCharacter = {
     {
       screenId: 'ACCEPT_CREDENTIAL',
       title: 'Accept your student card',
-      text: "Your wallet now has a secure and private connection with BestBC College. You should have received an offer in BC Wallet for a Student Card.\nReview what they are sending, and choose 'Accept offer'.",
+      text: "Your wallet now has a secure and private connection with BestBC College. You should have received an offer in FHWA for a Student Card.\nReview what they are sending, and choose 'Accept offer'.",
       image: '/public/common/onboarding-credential-light.svg',
       credentials: [
         {
@@ -140,13 +140,13 @@ export const studentCustom: CustomCharacter = {
           screenId: 'CONNECTION',
           title: "Start proving you're a student",
           text: "Imagine, as Alice, you are in the checkout process for Cool Clothes Online. They're offering you a 15% discount on your purchase if you can prove you're a student. First, scan the QR code.",
-          image: '/public/student/useCases/store/cool-clothes-no-overlay.png',
-          verifier: { name: 'Cool Clothes Online', icon: '/public/student/useCases/store/logo-university.png' },
+          image: '/public/student/useCases/store/background.png',
+          verifier: { name: 'Infrastructure', icon: '/public/student/useCases/store/logo-university.png' },
         },
         {
           screenId: 'PROOF',
           title: 'Confirm the information to send',
-          text: "BC Wallet will now ask you to confirm what to send. Notice how it will only share if the credential has expired, not even the expiry date itself gets shared. You don't have to share anything else for it to be trustable.",
+          text: "FHWA will now ask you to confirm what to send. Notice how it will only share if the credential has expired, not even the expiry date itself gets shared. You don't have to share anything else for it to be trustable.",
           requestOptions: {
             title: 'Cool Clothes Online Request',
             text: 'Cool Clothes Online would like some of your personal information.',
@@ -191,7 +191,7 @@ export const studentCustom: CustomCharacter = {
         {
           screenId: 'PROOF',
           title: 'Confirm the information to send',
-          text: "BC Wallet will now ask you to confirm what to send for the booking. Notice how they only need your first name so they can display it on the booking screen. By providing anything from your student card, they automatically know your student card hasn't been revoked.",
+          text: "FHWA will now ask you to confirm what to send for the booking. Notice how they only need your first name so they can display it on the booking screen. By providing anything from your student card, they automatically know your student card hasn't been revoked.",
           requestOptions: {
             title: 'BestBC College Request',
             text: 'BestBC College would like some of your personal information.',

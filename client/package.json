@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "license": "Apache-2.0",
-  "description": "BC Wallet - Verifiable Credential Demo",
+  "description": "FHWA - Verifiable Credential Demo",
   "dependencies": {
     "@reduxjs/toolkit": "^1.7.2",
     "@snowplow/browser-tracker": "^3.14.0",
@@ -27,8 +27,8 @@
     "redux-thunk": "^2.4.1"
   },
   "scripts": {
-    "start": "GENERATE_SOURCEMAP=false react-scripts start",
-    "build": "GENERATE_SOURCEMAP=false react-scripts build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
     "test": "GENERATE_SOURCEMAP=false react-scripts test",
     "eject": "GENERATE_SOURCEMAP=false react-scripts eject"
   },
