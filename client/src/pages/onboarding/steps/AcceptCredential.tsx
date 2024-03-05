@@ -73,9 +73,6 @@ export const AcceptCredential: React.FC<Props> = ({
           } else {
             dispatch(issueCredential({ connectionId: connectionId, cred: item, credDefId }))
           }
-          track({
-            id: 'credential_issued',
-          })
         }
       })
       setCredentialsIssued(true)

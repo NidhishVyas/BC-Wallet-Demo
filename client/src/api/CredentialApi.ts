@@ -11,9 +11,9 @@ export const issueCredential = async (
   return apiCall.post(`/demo/credentials/offerCredential`, {
     connection_id: connectionId,
     cred_def_id: credDefId,
-    credential_proposal: {
+    credential_preview: {
       '@type': 'issue-credential/1.0/credential-preview',
-      attributes: cred.attributes,
+      'attributes': cred.attributes,
     },
   })
 }
@@ -26,9 +26,9 @@ export const issueDeepCredential = async (
   return apiCall.post(`/demo/deeplink/offerCredential`, {
     connection_id: connectionId,
     cred_def_id: credDefId,
-    credential_proposal: {
+    credential_preview: {
       '@type': 'issue-credential/1.0/credential-preview',
-      attributes: cred.attributes,
+      'attributes': cred.attributes,
     },
   })
 }

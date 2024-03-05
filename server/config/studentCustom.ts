@@ -81,19 +81,39 @@ export const studentCustom: CustomCharacter = {
           name: 'student_card',
           version: '1.2',
           icon: '/public/student/icon-student.svg',
-          attributes: [
+	  attributes: [
             {
-              name: 'student_first_name',
+              name: 'vehicle_name',
+              value: 'Ford',
+            },
+            {
+              name: 'issued',
+              value: '3/4/2024',
+            },
+	    {
+              name: 'owner_address',
+              value: 'NJ',
+            },
+            {
+              name: 'vehicle_owner',
               value: 'Alice',
             },
             {
-              name: 'student_last_name',
-              value: 'Smith',
+              name: 'region_issued',
+              value: 'NJ',
+            },
+            {
+              name: 'country',
+              value: 'USA',
             },
             {
               name: 'expiry_date',
-              value: `${getDateInt(4)}`,
+              value: '20240304',
             },
+            {
+              name: 'photo_id',
+              value: '*',
+            }
           ],
         },
       ],

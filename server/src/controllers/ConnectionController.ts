@@ -3,6 +3,23 @@ import { Service } from 'typedi'
 
 import { tractionRequest } from '../utils/tractionHelper'
 
+
+
+export interface AriesInvitation {
+  connection_id: string;
+  invitation: {
+    "@type": string;
+    "@id": string;
+    recipientKeys: string[];
+    serviceEndpoint: string;
+    label: string;
+  };
+  invitation_url: string;
+  alias?: string;
+}
+
+
+
 @JsonController('/connections')
 @Service()
 export class ConnectionController {
@@ -19,17 +36,10 @@ export class ConnectionController {
   }
 
   @Post('/createInvite')
-  public async createConnectionInvite(@Body() params: any) {
+  public async createConnectionInvite(@Body() params: any) : Promise<AriesInvitation>{
     const data = {
-      ...params,
-      accept: ['didcomm/aip1', 'didcomm/aip2;env=rfc19'],
-      goal: 'Showcase connection',
-      protocol_version: '1.0',
-      handshake_protocols: ['https://didcomm.org/connections/1.0'],
-
-      metadata: {},
     }
-    const response = await tractionRequest.post(`/out-of-band/create-invitation?auto_accept=true`, data)
-    return response.data
+    const response = await tractionRequest.post(`/connections/create-invitation`, data)
+    return response.data as AriesInvitation
   }
 }
