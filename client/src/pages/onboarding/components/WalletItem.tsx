@@ -26,7 +26,7 @@ export const WalletItem: React.FC<Props> = ({ icon, name, organization, recommen
         <div className="flex flex-1 font-medium	 dark:text-white text-lg">
           {name} {recommended && <AiFillStar style={{ color: '#FFC107' }} className="m-1" />}
         </div>
-        <p className="text-sm pr-2">by {organization}</p>
+        <p className="text-sm pr-2 text-left">by {organization}</p>
       </div>
       <div
         className="flex flex-1-1 justify-end mr-8 md:mr-16 font-semibold  dark:text-white rounded-lg"

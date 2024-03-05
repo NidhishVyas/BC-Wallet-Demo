@@ -2,10 +2,12 @@ import type { CustomCharacter } from '../../../slices/types'
 
 import { trackSelfDescribingEvent } from '@snowplow/browser-tracker'
 import { motion } from 'framer-motion'
-import { startCase } from 'lodash'
+import { head, startCase } from 'lodash'
 import React from 'react'
 
 import { rowFadeX } from '../../../FramerAnimations'
+import Car from '../../../assets/carfront.png'
+import Infra from '../../../assets/logo-university.png'
 import { prependApiUrl } from '../../../utils/Url'
 
 import { StartButton } from './StartButton'
@@ -52,7 +54,28 @@ export const UseCaseItem: React.FC<Props> = ({
       >
         <h1 className="flex-none font-bold text-lg mb-2 h-6">{title}</h1>
         <div className="flex h-32 mt-2">
-          <div className="h-full w-1/2 mr-2 m-auto xl:w-1/5" />
+          <div className="h-full w-1/2 ml-2 m-auto xl:w-1/5" style={{ position: 'relative' }}>
+            {title === 'Infrastructure' ? (
+              <img
+                src={Infra}
+                alt=""
+                style={{
+                  width: 120,
+                  height: 'auto',
+                }}
+              />
+            ) : (
+              <img
+                src={Car}
+                alt=""
+                style={{
+                  width: 120,
+                  height: 'auto',
+                  marginTop: 20,
+                }}
+              />
+            )}
+          </div>
 
           <div className="w-2/3 xl:w-1/3 flex flex-col">
             <h2 className="text-sm xl:text-base font-semibold mb-2">You'll be asked to share</h2>
