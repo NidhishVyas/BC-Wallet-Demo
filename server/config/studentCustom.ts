@@ -69,12 +69,12 @@ export const studentCustom: CustomCharacter = {
       title: 'Connect with CA (Certificate Authority)',
       text: 'Imagine, as Alice, you are connected with a CA. They want to offer you your credentials. Use your app to scan the QR code from the website.',
       image: '/public/student/onboarding-connect-light.svg',
-      issuer_name: 'FHWA',
+      issuer_name: 'BestBC College',
     },
     {
       screenId: 'ACCEPT_CREDENTIAL',
       title: 'Accept your student card',
-      text: "Your wallet now has a secure and private connection with FHWA. You should have received an offer in FHWA for a Student Card.\nReview what they are sending, and choose 'Accept offer'.",
+      text: "Your wallet now has a secure and private connection with BestBC College. You should have received an offer in FHWA for a Student Card.\nReview what they are sending, and choose 'Accept offer'.",
       image: '/public/common/onboarding-credential-light.svg',
       credentials: [
         {
@@ -108,12 +108,12 @@ export const studentCustom: CustomCharacter = {
             },
             {
               name: 'expiry_date',
-              value: '20240304',
+              value: '20260304',
             },
             {
               name: 'photo_id',
               value: '*',
-            },
+            }
           ],
         },
       ],
@@ -180,22 +180,26 @@ export const studentCustom: CustomCharacter = {
         {
           screenId: 'CONNECTION',
           title: 'Start booking the room',
-          text: "Imagine you're on the room booking page for FHWA, abd you've chosen a data and time. Now they just need to confirm a few details. Scan the QR code to continue.",
+          text: "Imagine you're on the room booking page for BestBC College, abd you've chosen a data and time. Now they just need to confirm a few details. Scan the QR code to continue.",
           image: '/public/student/useCases/school/best-bc-college-no-overlay.png',
-          verifier: { name: 'FHWA', icon: '/public/student/useCases/school/logo-university.png' },
+          verifier: { name: 'BestBC College', icon: '/public/student/useCases/school/logo-university.png' },
         },
         {
           screenId: 'PROOF',
           title: 'Confirm the information to send',
           text: "FHWA will now ask you to confirm what to send for the booking. Notice how they only need your first name so they can display it on the booking screen. By providing anything from your student card, they automatically know your student card hasn't been revoked.",
           requestOptions: {
-            title: 'FHWA Request',
-            text: 'FHWA would like some of your personal information.',
+            title: 'BestBC College Request',
+            text: 'BestBC College would like some of your personal information.',
             requestedCredentials: [
               {
                 icon: '/public/student/useCases/school/icon-university-card.png',
-                name: 'student_card',
-                properties: ['student_first_name'],
+                name: 'vehicle_credential',
+                predicates: {
+                  name: 'expiry',
+                  type: '>=',
+                  value: getDateInt(),
+                },
               },
             ],
           },
@@ -210,3 +214,4 @@ export const studentCustom: CustomCharacter = {
     },
   ],
 }
+
