@@ -3,7 +3,7 @@ import type { CustomCharacter } from '../src/content/types'
 import { getDateInt } from '../src/utils/dateint'
 export const studentCustom: CustomCharacter = {
   name: 'Alice',
-  type: 'Ford',
+  type: 'Audi',
   image: '/public/student/student.svg',
   revocationInfo: [
     {
@@ -50,7 +50,7 @@ export const studentCustom: CustomCharacter = {
     {
       screenId: 'PICK_CHARACTER',
       title: 'Meet Alice',
-      text: "Meet Alice (that's you in this demo!). Alice is a student at a college. To help make student life easier, Alice took a Ford vehicle and now needs digital credentials to verify her driving license.",
+      text: "Meet Alice (that's you in this demo!). Alice is a student at a college. To help make student life easier, Alice took a Audi vehicle and now needs digital credentials to verify her driving license.",
     },
     {
       screenId: 'SETUP_START',
@@ -69,12 +69,12 @@ export const studentCustom: CustomCharacter = {
       title: 'Connect with CA (Certificate Authority)',
       text: 'Imagine, as Alice, you are connected with a CA. They want to offer you your credentials. Use your app to scan the QR code from the website.',
       image: '/public/student/onboarding-connect-light.svg',
-      issuer_name: 'BestBC College',
+      issuer_name: 'FHWA College',
     },
     {
       screenId: 'ACCEPT_CREDENTIAL',
       title: 'Accept your student card',
-      text: "Your wallet now has a secure and private connection with BestBC College. You should have received an offer in FHWA for a Student Card.\nReview what they are sending, and choose 'Accept offer'.",
+      text: "Your wallet now has a secure and private connection with FHWA College. You should have received an offer in FHWA for a Student Card.\nReview what they are sending, and choose 'Accept offer'.",
       image: '/public/common/onboarding-credential-light.svg',
       credentials: [
         {
@@ -84,7 +84,7 @@ export const studentCustom: CustomCharacter = {
           attributes: [
             {
               name: 'vehicle_name',
-              value: 'Ford',
+              value: 'Audi',
             },
             {
               name: 'issued',
@@ -169,7 +169,7 @@ export const studentCustom: CustomCharacter = {
     },
     {
       id: 'study',
-      name: 'Bob',
+      name: 'Charlie',
       screens: [
         {
           screenId: 'START',
@@ -180,17 +180,17 @@ export const studentCustom: CustomCharacter = {
         {
           screenId: 'CONNECTION',
           title: 'Start booking the room',
-          text: "Imagine you're on the room booking page for BestBC College, abd you've chosen a data and time. Now they just need to confirm a few details. Scan the QR code to continue.",
+          text: "Imagine you're on the room booking page for FHWA College, abd you've chosen a data and time. Now they just need to confirm a few details. Scan the QR code to continue.",
           image: '/public/student/useCases/school/best-bc-college-no-overlay.png',
-          verifier: { name: 'BestBC College', icon: '/public/student/useCases/school/logo-university.png' },
+          verifier: { name: 'FHWA College', icon: '/public/student/useCases/school/logo-university.png' },
         },
         {
           screenId: 'PROOF',
           title: 'Confirm the information to send',
           text: "FHWA will now ask you to confirm what to send for the booking. Notice how they only need your first name so they can display it on the booking screen. By providing anything from your student card, they automatically know your student card hasn't been revoked.",
           requestOptions: {
-            title: 'BestBC College Request',
-            text: 'BestBC College would like some of your personal information.',
+            title: 'FHWA College Request',
+            text: 'FHWA College would like some of your personal information.',
             requestedCredentials: [
               {
                 icon: '/public/student/useCases/school/icon-university-card.png',
