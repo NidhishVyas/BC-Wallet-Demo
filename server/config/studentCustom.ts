@@ -7,7 +7,7 @@ export const studentCustom: CustomCharacter = {
   image: '/public/student/student.svg',
   revocationInfo: [
     {
-      credentialName: 'Student Card',
+      credentialName: 'Proof',
       credentialIcon: '/public/student/icon-student.svg',
       title: 'Revoke your Student Card',
       description:
@@ -50,11 +50,7 @@ export const studentCustom: CustomCharacter = {
     {
       screenId: 'PICK_CHARACTER',
       title: 'Meet Alice',
-<<<<<<< HEAD
       text: "Meet Alice (that's you in this demo!). Alice is a student at a college. To help make student life easier, Alice took a Ford vehicle and now needs digital credentials to verify her driving license.",
-=======
-      text: "Meet Alice (that's you in this demo!). Alice is a student at BestBC College. To help make student life easier, BestBC College is going to offer Alice a digital Student Card to put in her FHWA.",
->>>>>>> f60aa7b337ce8403abb5f05d9b73bd576a16c747
     },
     {
       screenId: 'SETUP_START',
@@ -70,13 +66,8 @@ export const studentCustom: CustomCharacter = {
     },
     {
       screenId: 'CONNECT',
-<<<<<<< HEAD
       title: 'Connect with CA (Certificate Authority)',
       text: 'Imagine, as Alice, you are connected with a CA. They want to offer you your credentials. Use your app to scan the QR code from the website.',
-=======
-      title: 'Connect with BestBC College',
-      text: 'Imagine, as Alice, you are logged into the BestBC College website (see below). They want to offer you a Digital Student Card. Use your FHWA to scan the QR code from the website.',
->>>>>>> f60aa7b337ce8403abb5f05d9b73bd576a16c747
       image: '/public/student/onboarding-connect-light.svg',
       issuer_name: 'BestBC College',
     },
@@ -129,8 +120,8 @@ export const studentCustom: CustomCharacter = {
           screenId: 'CONNECTION',
           title: "Start proving you're a student",
           text: "Imagine, as Alice, you are in the checkout process for Cool Clothes Online. They're offering you a 15% discount on your purchase if you can prove you're a student. First, scan the QR code.",
-          image: '/public/student/useCases/store/cool-clothes-no-overlay.png',
-          verifier: { name: 'Cool Clothes Online', icon: '/public/student/useCases/store/logo-university.png' },
+          image: '/public/student/useCases/store/background.png',
+          verifier: { name: 'Infrastructure', icon: '/public/student/useCases/store/logo-university.png' },
         },
         {
           screenId: 'PROOF',
