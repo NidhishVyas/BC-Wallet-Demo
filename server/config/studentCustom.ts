@@ -113,7 +113,7 @@ export const studentCustom: CustomCharacter = {
             {
               name: 'photo_id',
               value: '*',
-            }
+            },
           ],
         },
       ],
@@ -195,10 +195,11 @@ export const studentCustom: CustomCharacter = {
               {
                 icon: '/public/student/useCases/school/icon-university-card.png',
                 name: 'vehicle_credential',
+                properties: ['vehicle_owner', 'vehicle_name'],
                 predicates: {
                   name: 'expiry',
                   type: '>=',
-                  value: getDateInt(),
+                  value: parseInt(new Date().toLocaleDateString('en-US').split('/').join('')),
                 },
               },
             ],
@@ -214,4 +215,3 @@ export const studentCustom: CustomCharacter = {
     },
   ],
 }
-
