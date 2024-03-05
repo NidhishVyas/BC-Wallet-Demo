@@ -78,7 +78,7 @@ export const studentCustom: CustomCharacter = {
       image: '/public/common/onboarding-credential-light.svg',
       credentials: [
         {
-          name: 'student_card',
+          name: 'vehicle_credential',
           version: '1.2',
           icon: '/public/student/icon-student.svg',
 	  attributes: [
@@ -153,12 +153,8 @@ export const studentCustom: CustomCharacter = {
             requestedCredentials: [
               {
                 icon: '/public/student/useCases/school/icon-university-card.png',
-                name: 'student_card',
-                predicates: {
-                  name: 'expiry_date',
-                  type: '>=',
-                  value: getDateInt(),
-                },
+                name: 'vehicle_credential',
+                properties: ['vehicle_owner'],
               },
             ],
           },
