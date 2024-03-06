@@ -16,6 +16,7 @@ export interface Props {
 }
 
 export const Credential: React.FC<Props> = ({ title, credential, data }) => {
+
   const credentialIssued = isCredIssued(credential.state)
   return (
     <motion.div

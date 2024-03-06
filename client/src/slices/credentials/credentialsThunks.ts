@@ -13,6 +13,7 @@ export const issueCredential = createAsyncThunk(
   'credentials/issueCredential',
   async (data: { connectionId: string; cred: Credential; credDefId: string }) => {
     const response = await Api.issueCredential(data.connectionId, data.cred, data.credDefId)
+
     return response.data
   }
 )

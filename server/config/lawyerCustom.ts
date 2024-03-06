@@ -78,7 +78,7 @@ export const lawyerCustom: CustomCharacter = {
       image: '/public/common/onboarding-credential-light.svg',
       credentials: [
         {
-          name: 'vehicle_credential',
+          name: process.env.SCHEMA_NAME ?? "",
           version: '1.2',
           icon: '/public/student/icon-student.svg',
           attributes: [
@@ -153,7 +153,7 @@ export const lawyerCustom: CustomCharacter = {
             requestedCredentials: [
               {
                 icon: '/public/student/useCases/school/icon-university-card.png',
-                name: 'vehicle_credential',
+                name: process.env.SCHEMA_NAME ?? "",
                 properties: ['vehicle_owner'],
               },
             ],
@@ -194,7 +194,7 @@ export const lawyerCustom: CustomCharacter = {
             requestedCredentials: [
               {
                 icon: '/public/student/useCases/school/icon-university-card.png',
-                name: 'vehicle_credential',
+                name: process.env.SCHEMA_NAME ?? "",
                 predicates: {
                   name: 'expiry',
                   type: '>=',

@@ -86,7 +86,7 @@ export const AcceptCredential: React.FC<Props> = ({
   }, [credentialsAccepted])
 
   const handleCredentialTimeout = () => {
-    if (!isIssueCredentialLoading || !error) return
+    if (isIssueCredentialLoading || !error) return
     setErrorMsg(
       `The request timed out. We're sorry, but you're going to have to restart the demo. If this issue persists, please contact us.`
     )
