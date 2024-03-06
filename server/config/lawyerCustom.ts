@@ -1,7 +1,5 @@
 import type { CustomCharacter } from '../src/content/types'
 
-import { getDateInt } from '../src/utils/dateint'
-
 const currentDate = new Date().toLocaleDateString('en-US').split('/')
 const todayDate = parseInt(
   currentDate[2] +
