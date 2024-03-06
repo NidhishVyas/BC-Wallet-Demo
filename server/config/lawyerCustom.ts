@@ -204,7 +204,7 @@ export const lawyerCustom: CustomCharacter = {
                 icon: '/public/student/useCases/school/icon-university-card.png',
                 name: process.env.CRED_NAME ?? '',
                 predicates: {
-                  name: 'expiry',
+                  name: 'expiry_date',
                   type: '>=',
                   value: todayDate,
                 },

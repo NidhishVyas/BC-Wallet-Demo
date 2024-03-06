@@ -4,7 +4,7 @@ export interface Credential {
   version: string
   attributes: {
     name: string
-    value: string
+    value: string | number
   }[]
 }
 

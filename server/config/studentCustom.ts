@@ -205,9 +205,9 @@ export const studentCustom: CustomCharacter = {
                 name: process.env.CRED_NAME ?? '',
                 properties: ['vehicle_owner', 'vehicle_name'],
                 predicates: {
-                  name: 'expiry',
+                  name: 'expiry_date',
                   type: '>=',
-                  value: todayDate,
+                  value: 20240306,
                 },
               },
             ],
