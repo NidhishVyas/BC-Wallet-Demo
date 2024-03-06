@@ -1,8 +1,16 @@
 import type { CustomCharacter } from '../src/content/types'
 
 import { getDateInt } from '../src/utils/dateint'
+
+const currentDate = new Date().toLocaleDateString('en-US').split('/')
+const todayDate = parseInt(
+  currentDate[2] +
+    (currentDate[0].length === 1 ? '0' + currentDate[0] : currentDate[0]) +
+    (currentDate[1].length === 1 ? '0' + currentDate[1] : currentDate[1])
+)
+
 export const lawyerCustom: CustomCharacter = {
-  name: 'Charlie',
+  name: 'Bob',
   type: 'Chevrolet',
   image: '/public/student/student.svg',
   revocationInfo: [
@@ -78,7 +86,7 @@ export const lawyerCustom: CustomCharacter = {
       image: '/public/common/onboarding-credential-light.svg',
       credentials: [
         {
-          name: process.env.SCHEMA_NAME ?? "",
+          name: process.env.SCHEMA_NAME ?? '',
           version: '1.2',
           icon: '/public/student/icon-student.svg',
           attributes: [
@@ -96,7 +104,7 @@ export const lawyerCustom: CustomCharacter = {
             },
             {
               name: 'vehicle_owner',
-              value: 'Alice',
+              value: 'Bob',
             },
             {
               name: 'region_issued',
@@ -153,7 +161,7 @@ export const lawyerCustom: CustomCharacter = {
             requestedCredentials: [
               {
                 icon: '/public/student/useCases/school/icon-university-card.png',
-                name: process.env.CRED_NAME ?? "",
+                name: process.env.CRED_NAME ?? '',
                 properties: ['vehicle_owner'],
               },
             ],
@@ -194,11 +202,11 @@ export const lawyerCustom: CustomCharacter = {
             requestedCredentials: [
               {
                 icon: '/public/student/useCases/school/icon-university-card.png',
-                name: process.env.CRED_NAME ?? "",
+                name: process.env.CRED_NAME ?? '',
                 predicates: {
                   name: 'expiry',
                   type: '>=',
-                  value: getDateInt(),
+                  value: todayDate,
                 },
               },
             ],

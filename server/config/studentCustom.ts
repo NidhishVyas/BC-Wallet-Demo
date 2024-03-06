@@ -1,6 +1,14 @@
 import type { CustomCharacter } from '../src/content/types'
 
 import { getDateInt } from '../src/utils/dateint'
+
+const currentDate = new Date().toLocaleDateString('en-US').split('/')
+const todayDate = parseInt(
+  currentDate[2] +
+    (currentDate[0].length === 1 ? '0' + currentDate[0] : currentDate[0]) +
+    (currentDate[1].length === 1 ? '0' + currentDate[1] : currentDate[1])
+)
+
 export const studentCustom: CustomCharacter = {
   name: 'Alice',
   type: 'Audi',
@@ -78,7 +86,7 @@ export const studentCustom: CustomCharacter = {
       image: '/public/common/onboarding-credential-light.svg',
       credentials: [
         {
-          name: process.env.SCHEMA_NAME ?? "",
+          name: process.env.SCHEMA_NAME ?? '',
           version: '1.2',
           icon: '/public/student/icon-student.svg',
           attributes: [
@@ -153,7 +161,7 @@ export const studentCustom: CustomCharacter = {
             requestedCredentials: [
               {
                 icon: '/public/student/useCases/school/icon-university-card.png',
-                name: process.env.CRED_NAME ?? "",
+                name: process.env.CRED_NAME ?? '',
                 properties: ['vehicle_owner'],
               },
             ],
@@ -169,7 +177,7 @@ export const studentCustom: CustomCharacter = {
     },
     {
       id: 'study',
-      name: 'Charlie',
+      name: 'Bob',
       screens: [
         {
           screenId: 'START',
@@ -194,12 +202,12 @@ export const studentCustom: CustomCharacter = {
             requestedCredentials: [
               {
                 icon: '/public/student/useCases/school/icon-university-card.png',
-                name: process.env.CRED_NAME ?? "",
+                name: process.env.CRED_NAME ?? '',
                 properties: ['vehicle_owner', 'vehicle_name'],
                 predicates: {
                   name: 'expiry',
                   type: '>=',
-                  value: parseInt(new Date().toLocaleDateString('en-US').split('/').join('')),
+                  value: todayDate,
                 },
               },
             ],
