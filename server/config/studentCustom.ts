@@ -153,7 +153,7 @@ export const studentCustom: CustomCharacter = {
             requestedCredentials: [
               {
                 icon: '/public/student/useCases/school/icon-university-card.png',
-                name: process.env.SCHEMA_NAME ?? "",
+                name: process.env.CRED_NAME ?? "",
                 properties: ['vehicle_owner'],
               },
             ],
@@ -194,7 +194,7 @@ export const studentCustom: CustomCharacter = {
             requestedCredentials: [
               {
                 icon: '/public/student/useCases/school/icon-university-card.png',
-                name: process.env.SCHEMA_NAME ?? "",
+                name: process.env.CRED_NAME ?? "",
                 properties: ['vehicle_owner', 'vehicle_name'],
                 predicates: {
                   name: 'expiry',
