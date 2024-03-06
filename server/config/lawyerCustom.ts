@@ -58,7 +58,7 @@ export const lawyerCustom: CustomCharacter = {
     {
       screenId: 'PICK_CHARACTER',
       title: 'Meet Alice',
-      text: "Meet Alice (that's you in this demo!). Alice is a student at a college. To help make student life easier, Alice took a Audi vehicle and now needs digital credentials to verify her driving license.",
+      text: "Meet Bob (that's you in this demo!). Bob is a construction engineer and working in a company. He owns a Chevrolet. He feels having digital credentials is way easier and wants to get them.",
     },
     {
       screenId: 'SETUP_START',
@@ -92,7 +92,7 @@ export const lawyerCustom: CustomCharacter = {
           attributes: [
             {
               name: 'vehicle_name',
-              value: 'Audi',
+              value: 'Chevrolet',
             },
             {
               name: 'issued',
@@ -116,7 +116,7 @@ export const lawyerCustom: CustomCharacter = {
             },
             {
               name: 'expiry_date',
-              value: '20260304',
+              value: '20210304',
             },
             {
               name: 'photo_id',
@@ -177,7 +177,7 @@ export const lawyerCustom: CustomCharacter = {
     },
     {
       id: 'study',
-      name: 'Alice',
+      name: 'Charlie',
       screens: [
         {
           screenId: 'START',
