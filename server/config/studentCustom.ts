@@ -79,8 +79,8 @@ export const studentCustom: CustomCharacter = {
     },
     {
       screenId: 'ACCEPT_CREDENTIAL',
-      title: 'Accept your student card',
-      text: "Your wallet now has a secure and private connection with FHWA College. You should have received an offer in FHWA for a Student Card.\nReview what they are sending, and choose 'Accept offer'.",
+      title: 'Accept your vehicle credential',
+      text: "Your wallet now has a secure and private connection with CA. You should have received an offer in FHWA for a vehicle credential.\nReview what they are sending, and choose 'Accept offer'.",
       image: '/public/common/onboarding-credential-light.svg',
       credentials: [
         {
