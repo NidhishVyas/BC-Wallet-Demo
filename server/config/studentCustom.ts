@@ -8,8 +8,8 @@ const todayDate = parseInt(
 )
 
 export const studentCustom: CustomCharacter = {
-  name: 'Alice',
-  type: 'Audi',
+  name: 'Alice Smith',
+  type: 'Toyota Camry 2021',
   image: '/public/student/student.svg',
   revocationInfo: [
     {
@@ -56,7 +56,7 @@ export const studentCustom: CustomCharacter = {
     {
       screenId: 'PICK_CHARACTER',
       title: 'Meet Alice',
-      text: "Meet Alice (that's you in this demo!). Alice is a student at a college. To help make student life easier, Alice took a Audi vehicle and now needs digital credentials to verify her driving license.",
+      text: "Meet Alice Smith (that's you in this demo!). Alice is a student at a college. To help make student life easier, Alice took a Toyato vehicle and now needs digital credentials to verify her vehicle credential.",
     },
     {
       screenId: 'SETUP_START',
@@ -72,16 +72,16 @@ export const studentCustom: CustomCharacter = {
     },
     {
       screenId: 'CONNECT',
-      title: 'Connect with CA (Certificate Authority)',
-      text: 'Imagine, as Alice, you are connected with a CA. They want to offer you your credentials. Use your app to scan the QR code from the website.',
+      title: 'Connect with VDKMS CA (Certificate Authority)',
+      text: 'Imagine, as Alice, you are connected with a VDKMS CA. They want to offer you your credentials. Use your app to scan the QR code from the website.',
       image: '/public/student/onboarding-connect-light.svg',
-      issuer_name: 'FHWA College',
+      issuer_name: 'FHWA VDKMS CA',
     },
     {
       screenId: 'ACCEPT_CREDENTIAL',
       title: 'Accept your vehicle credential',
       text: "Your wallet now has a secure and private connection with CA. You should have received an offer in FHWA for a vehicle credential.\nReview what they are sending, and choose 'Accept offer'.",
-      image: '/public/common/onboarding-credential-light.svg',
+      image: '/public/student/onboarding-connect-light.svg',
       credentials: [
         {
           name: process.env.SCHEMA_NAME ?? '',
@@ -90,15 +90,23 @@ export const studentCustom: CustomCharacter = {
           attributes: [
             {
               name: 'vehicle_name',
-              value: 'Audi',
+              value: 'Toyato Camry 2021',
             },
             {
               name: 'issued',
-              value: '3/4/2024',
+              value: '03-10-2024',
             },
             {
               name: 'owner_address',
-              value: 'NJ',
+              value: '123 Maple Street, Austin, TX, 78701',
+            },
+            {
+              name: 'registration_number',
+              value: '8625147390'
+            },
+            {
+              name: 'vin',
+              value: 'JH4KA8269MC002371'
             },
             {
               name: 'vehicle_owner',
@@ -106,11 +114,7 @@ export const studentCustom: CustomCharacter = {
             },
             {
               name: 'region_issued',
-              value: 'NJ',
-            },
-            {
-              name: 'country',
-              value: 'USA',
+              value: 'Texas',
             },
             {
               name: 'expiry_date',
@@ -128,7 +132,7 @@ export const studentCustom: CustomCharacter = {
       screenId: 'SETUP_COMPLETED',
       title: "You're all set!",
       text: 'Congratulations, you’ve just received your first digital credentials. They are safely stored in your wallet and ready to be used. So, what are you waiting for? Let’s go!',
-      image: '/public/common/onboarding-completed-light.svg',
+      image: '/public/student/onboarding-connect-light.svg',
     },
   ],
   useCases: [

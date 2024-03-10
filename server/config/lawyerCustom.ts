@@ -8,16 +8,16 @@ const todayDate = parseInt(
 )
 
 export const lawyerCustom: CustomCharacter = {
-  name: 'Bob',
-  type: 'Chevrolet',
-  image: '/public/student/student.svg',
+  name: 'Bob Johnson',
+  type: 'Ford Mustang 2017',
+  image: '/public/lawyer2/lawyer2.svg',
   revocationInfo: [
     {
       credentialName: 'Proof',
-      credentialIcon: '/public/student/icon-student.svg',
-      title: 'Revoke your Student Card',
+      credentialIcon: '/public/lawyer2/icon-lawyer2.svg',
+      title: 'Revoke your vehicle credential',
       description:
-        'Best BC College allows you to revoke your Student Card "if":\n• there is a problem with your credential.\n• your device was lost or stolen and you want to secure your personal information.',
+        'FHWA VDKMS CA allows you to revoke your vehicle credential "if":\n• there is a problem with your credential.\n• your device was lost or stolen and you want to secure your personal information.',
     },
   ],
   progressBar: [
@@ -55,8 +55,8 @@ export const lawyerCustom: CustomCharacter = {
   onboarding: [
     {
       screenId: 'PICK_CHARACTER',
-      title: 'Meet Alice',
-      text: "Meet Bob (that's you in this demo!). Bob is a construction engineer and working in a company. He owns a Chevrolet. He feels having digital credentials is way easier and wants to get them.",
+      title: 'Meet Bob',
+      text: "Meet Bob Johnson (that's you in this demo!). Bob is a construction engineer and working in a company. He owns a Ford Mustang. He feels having digital credentials is way easier and wants to get them.",
     },
     {
       screenId: 'SETUP_START',
@@ -73,44 +73,48 @@ export const lawyerCustom: CustomCharacter = {
     {
       screenId: 'CONNECT',
       title: 'Connect with CA (Certificate Authority)',
-      text: 'Imagine, as Alice, you are connected with a CA. They want to offer you your credentials. Use your app to scan the QR code from the website.',
-      image: '/public/student/onboarding-connect-light.svg',
-      issuer_name: 'FHWA College',
+      text: 'Imagine, as Bob, you are connected with a CA. They want to offer you your credentials. Use your app to scan the QR code from the website.',
+      image: '/public/student/bob-onboarding-completed.svg',
+      issuer_name: 'FHWA VDKMS CA',
     },
     {
       screenId: 'ACCEPT_CREDENTIAL',
       title: 'Accept your vehicle credential',
       text: "Your wallet now has a secure and private connection with CA. You should have received an offer in FHWA for a vehicle credential.\nReview what they are sending, and choose 'Accept offer'.",
-      image: '/public/common/onboarding-credential-light.svg',
+      image: '/public/student/bob-onboarding-completed.svg',
       credentials: [
         {
           name: process.env.SCHEMA_NAME ?? '',
           version: '1.2',
-          icon: '/public/student/icon-student.svg',
+          icon: '/public/lawyer2/lawyer2.svg',
           attributes: [
             {
+              name: 'registration_number',
+              value: '2054691837'
+            },
+            {
+              name: 'vin',
+              value: '5XYZWDLA9DG123456'
+            },
+            {
               name: 'vehicle_name',
-              value: 'Chevrolet',
+              value: 'Ford Mustang 2017',
             },
             {
               name: 'issued',
-              value: '3/4/2024',
+              value: '03/04/2024',
             },
             {
               name: 'owner_address',
-              value: 'NJ',
+              value: '234 Elm Court, Miami, FL, 33101',
             },
             {
               name: 'vehicle_owner',
-              value: 'Bob',
+              value: 'Bob Johnson',
             },
             {
               name: 'region_issued',
-              value: 'NJ',
-            },
-            {
-              name: 'country',
-              value: 'USA',
+              value: 'Florida',
             },
             {
               name: 'expiry_date',
@@ -128,7 +132,7 @@ export const lawyerCustom: CustomCharacter = {
       screenId: 'SETUP_COMPLETED',
       title: "You're all set!",
       text: 'Congratulations, you’ve just received your first digital credentials. They are safely stored in your wallet and ready to be used. So, what are you waiting for? Let’s go!',
-      image: '/public/common/onboarding-completed-light.svg',
+      image: '/public/student/bob-onboarding-completed.svg',
     },
   ],
   useCases: [
@@ -139,7 +143,7 @@ export const lawyerCustom: CustomCharacter = {
         {
           screenId: 'START',
           title: 'Connecting with infrastructure',
-          text: "Alice (that's you in this demo!) needs to send her credentials to connect to the infrastrcture. In this example, you will just send the infrastructure your complete credentials.",
+          text: "Alice Smith (that's you in this demo!) needs to send her credentials to connect to the infrastrcture. In this example, you will just send the infrastructure your complete credentials.",
           image: '/public/student/useCases/store/card-school.svg',
         },
         {
