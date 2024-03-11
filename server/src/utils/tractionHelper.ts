@@ -3,7 +3,7 @@ import type { AxiosRequestConfig } from 'axios'
 import axios from 'axios'
 import moment from 'moment'
 
-export let agentKey = ''
+export const agentKey = ''
 
 export const tractionBaseUrl = process.env.TRACTION_URL ?? ''
 

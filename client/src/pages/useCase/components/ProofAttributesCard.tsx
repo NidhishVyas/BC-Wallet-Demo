@@ -12,7 +12,7 @@ import { prependApiUrl } from '../../../utils/Url'
 export interface Props {
   entityName: string
   requestedCredentials: CredentialRequest[]
-  proof: any
+  proof: unknown
   proofReceived: boolean
 }
 
@@ -55,7 +55,7 @@ export const ProofAttributesCard: React.FC<Props> = ({ entityName, requestedCred
                   style={{ justifySelf: 'center', alignSelf: 'center' }}
                   className="flex-1-1 text-sm bg-bcgov-lightgrey dark:bg-bcgov-darkgrey p-1 px-2 rounded-lg my-1 md:m-2"
                 >
-                  <p>{prop.charAt(0).toUpperCase() + prop.slice(1)}</p>
+                  <p>{(prop.charAt(0).toUpperCase() + prop.slice(1)).replace('_', ' ')}</p>
                 </div>
                 {isDataUrl(value) ? (
                   <div className="text-sm bg-white dark:bg-grey p-1 px-2 rounded-lg m-2 truncate">
@@ -72,9 +72,11 @@ export const ProofAttributesCard: React.FC<Props> = ({ entityName, requestedCred
           {item.predicates && (
             <div className="flex flex-row">
               <p className="flex-1-1 text-sm bg-bcgov-lightgrey dark:bg-bcgov-darkgrey p-1 px-2 rounded-lg m-2">
-                {item.predicates.name.charAt(0).toUpperCase() + item.predicates.name.slice(1)}
+                {(item.predicates.name.charAt(0).toUpperCase() + item.predicates.name.slice(1)).replace('_', ' ')}
               </p>
-              <p className="flex-1 text-sm bg-white dark:bg-grey p-1 px-2 rounded-lg m-2">{proofReceived && 'OK'}</p>
+              <p className="flex-1 text-sm bg-white dark:bg-grey p-1 px-2 rounded-lg m-2">
+                {proofReceived && 'Not Expired'}
+              </p>
             </div>
           )}
         </div>

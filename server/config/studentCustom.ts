@@ -102,11 +102,11 @@ export const studentCustom: CustomCharacter = {
             },
             {
               name: 'registration_number',
-              value: '8625147390'
+              value: '8625147390',
             },
             {
               name: 'vin',
-              value: 'JH4KA8269MC002371'
+              value: 'JH4KA8269MC002371',
             },
             {
               name: 'vehicle_owner',
@@ -137,7 +137,7 @@ export const studentCustom: CustomCharacter = {
   ],
   useCases: [
     {
-      id: 'clothesOnline',
+      id: 'infrastructure',
       name: 'Infrastructure',
       screens: [
         {
@@ -150,7 +150,7 @@ export const studentCustom: CustomCharacter = {
           screenId: 'CONNECTION',
           title: "Start proving you're a student",
           text: "Imagine, as Alice, you are in the checkout process for Cool Clothes Online. They're offering you a 15% discount on your purchase if you can prove you're a student. First, scan the QR code.",
-          image: '/public/student/useCases/store/background.png',
+          image: '/public/common/background.png',
           verifier: { name: 'Infrastructure', icon: '/public/student/useCases/store/logo-university.png' },
         },
         {
@@ -158,8 +158,8 @@ export const studentCustom: CustomCharacter = {
           title: 'Confirm the information to send',
           text: "FHWA will now ask you to confirm what to send. Notice how it will only share if the credential has expired, not even the expiry date itself gets shared. You don't have to share anything else for it to be trustable.",
           requestOptions: {
-            title: 'Cool Clothes Online Request',
-            text: 'Cool Clothes Online would like some of your personal information.',
+            title: 'Connect with Infrastructure',
+            text: 'Infrastructure wants to connect with you to send information.',
             requestedCredentials: [
               {
                 icon: '/public/student/useCases/school/icon-university-card.png',
@@ -178,29 +178,29 @@ export const studentCustom: CustomCharacter = {
       ],
     },
     {
-      id: 'study',
-      name: 'Bob',
+      id: 'charlie',
+      name: 'Charlie',
       screens: [
         {
           screenId: 'START',
-          title: 'Book a study room',
+          title: 'Verify credentials',
           text: "Alice has lots of work to do, and needs a study room for some peace and quiet. In this example, we'll present some info from our Student Card, but just what's needed to book the room.",
-          image: '/public/student/useCases/school/card-school.svg',
+          image: '/public/student/bob-onboarding-completed.svg',
         },
         {
           screenId: 'CONNECTION',
-          title: 'Start booking the room',
-          text: "Imagine you're on the room booking page for FHWA College, abd you've chosen a data and time. Now they just need to confirm a few details. Scan the QR code to continue.",
-          image: '/public/student/useCases/school/best-bc-college-no-overlay.png',
-          verifier: { name: 'FHWA College', icon: '/public/student/useCases/school/logo-university.png' },
+          title: 'Start verifying the credentials',
+          text: "Imagine you've have connected with a car. Now they just need to confirm a few details. Scan the QR code to continue.",
+          image: '/public/common/background.png',
+          verifier: { name: 'Charlie', icon: '/public/lawyer2/carfront.svg' },
         },
         {
           screenId: 'PROOF',
           title: 'Confirm the information to send',
           text: "FHWA will now ask you to confirm what to send for the booking. Notice how they only need your first name so they can display it on the booking screen. By providing anything from your student card, they automatically know your student card hasn't been revoked.",
           requestOptions: {
-            title: 'FHWA College Request',
-            text: 'FHWA College would like some of your personal information.',
+            title: 'Credential Request',
+            text: 'Charlie would like some of your personal information.',
             requestedCredentials: [
               {
                 icon: '/public/student/useCases/school/icon-university-card.png',

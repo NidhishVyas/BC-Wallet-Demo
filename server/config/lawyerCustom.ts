@@ -10,11 +10,11 @@ const todayDate = parseInt(
 export const lawyerCustom: CustomCharacter = {
   name: 'Bob Johnson',
   type: 'Ford Mustang 2017',
-  image: '/public/lawyer2/lawyer2.svg',
+  image: '/public/lawyer2/bob_4.svg',
   revocationInfo: [
     {
       credentialName: 'Proof',
-      credentialIcon: '/public/lawyer2/icon-lawyer2.svg',
+      credentialIcon: '/public/lawyer2/bob_logo.svg',
       title: 'Revoke your vehicle credential',
       description:
         'FHWA VDKMS CA allows you to revoke your vehicle credential "if":\n• there is a problem with your credential.\n• your device was lost or stolen and you want to secure your personal information.',
@@ -74,14 +74,14 @@ export const lawyerCustom: CustomCharacter = {
       screenId: 'CONNECT',
       title: 'Connect with CA (Certificate Authority)',
       text: 'Imagine, as Bob, you are connected with a CA. They want to offer you your credentials. Use your app to scan the QR code from the website.',
-      image: '/public/student/bob-onboarding-completed.svg',
+      image: '/public/lawyer2/bob_onboarding.svg',
       issuer_name: 'FHWA VDKMS CA',
     },
     {
       screenId: 'ACCEPT_CREDENTIAL',
       title: 'Accept your vehicle credential',
       text: "Your wallet now has a secure and private connection with CA. You should have received an offer in FHWA for a vehicle credential.\nReview what they are sending, and choose 'Accept offer'.",
-      image: '/public/student/bob-onboarding-completed.svg',
+      image: '/public/lawyer2/bob_onboarding.svg',
       credentials: [
         {
           name: process.env.SCHEMA_NAME ?? '',
@@ -90,11 +90,11 @@ export const lawyerCustom: CustomCharacter = {
           attributes: [
             {
               name: 'registration_number',
-              value: '2054691837'
+              value: '2054691837',
             },
             {
               name: 'vin',
-              value: '5XYZWDLA9DG123456'
+              value: '5XYZWDLA9DG123456',
             },
             {
               name: 'vehicle_name',
@@ -132,12 +132,12 @@ export const lawyerCustom: CustomCharacter = {
       screenId: 'SETUP_COMPLETED',
       title: "You're all set!",
       text: 'Congratulations, you’ve just received your first digital credentials. They are safely stored in your wallet and ready to be used. So, what are you waiting for? Let’s go!',
-      image: '/public/student/bob-onboarding-completed.svg',
+      image: '/public/lawyer2/bob_onboarding.svg',
     },
   ],
   useCases: [
     {
-      id: 'clothesOnline',
+      id: 'infrastructure',
       name: 'Infrastructure',
       screens: [
         {
@@ -150,7 +150,7 @@ export const lawyerCustom: CustomCharacter = {
           screenId: 'CONNECTION',
           title: "Start proving you're a student",
           text: "Imagine, as Alice, you are in the checkout process for Cool Clothes Online. They're offering you a 15% discount on your purchase if you can prove you're a student. First, scan the QR code.",
-          image: '/public/student/useCases/store/background.png',
+          image: '/public/common/background.png',
           verifier: { name: 'Infrastructure', icon: '/public/student/useCases/store/logo-university.png' },
         },
         {
@@ -178,33 +178,34 @@ export const lawyerCustom: CustomCharacter = {
       ],
     },
     {
-      id: 'study',
+      id: 'charlie',
       name: 'Charlie',
       screens: [
         {
           screenId: 'START',
-          title: 'Book a study room',
-          text: "Alice has lots of work to do, and needs a study room for some peace and quiet. In this example, we'll present some info from our Student Card, but just what's needed to book the room.",
-          image: '/public/student/useCases/school/card-school.svg',
+          title: 'Verify credentials',
+          text: "Charlie wants to connect with you but wants to first confirm if they’re interacting with the correct vehicle. In this example, we'll present some info from our Vehicle Credential, but just what's needed to confirm our identity.",
+          image: '/public/lawyer2/bob_onboarding.svg',
         },
         {
           screenId: 'CONNECTION',
-          title: 'Start booking the room',
-          text: "Imagine you're on the room booking page for FHWA College, abd you've chosen a data and time. Now they just need to confirm a few details. Scan the QR code to continue.",
-          image: '/public/student/useCases/school/best-bc-college-no-overlay.png',
-          verifier: { name: 'FHWA College', icon: '/public/student/useCases/school/logo-university.png' },
+          title: 'Start verifying the credentials',
+          text: "Imagine you've connected with Charlie. Now they just need to confirm a few details. Scan the QR code to continue.",
+          image: '/public/common/background.png',
+          verifier: { name: 'Charlie', icon: '/public/lawyer2/carfront.svg' },
         },
         {
           screenId: 'PROOF',
           title: 'Confirm the information to send',
-          text: "FHWA will now ask you to confirm what to send for the booking. Notice how they only need your first name so they can display it on the booking screen. By providing anything from your student card, they automatically know your student card hasn't been revoked.",
+          text: "Charlie will now ask you to confirm what to send for the proof request. Notice how they only need some of your attributes and they will also display it on the screen. By providing anything from your vehicle credential, they automatically know your credential hasn't been revoked.",
           requestOptions: {
-            title: 'FHWA College Request',
-            text: 'FHWA College would like some of your personal information.',
+            title: 'Credential Request',
+            text: 'Charlie would like some of your personal information.',
             requestedCredentials: [
               {
                 icon: '/public/student/useCases/school/icon-university-card.png',
                 name: process.env.CRED_NAME ?? '',
+                properties: ['vehicle_owner', 'vehicle_name'],
                 predicates: {
                   name: 'expiry_date',
                   type: '>=',
@@ -217,8 +218,8 @@ export const lawyerCustom: CustomCharacter = {
         {
           screenId: 'STEP_END',
           title: "You're done!",
-          text: "The room is booked. Just by proving your first name, Best BC College could trust you are a current student, and could let others know there's a booking without revealing too much about you.",
-          image: '/public/student/student-accepted.svg',
+          text: 'You are now verified. Just by proving your credential, Charlie could trust you are a verified vehicle without revealing too much about you and all your credential attributes.',
+          image: '/public/lawyer2/bob_done.svg',
         },
       ],
     },

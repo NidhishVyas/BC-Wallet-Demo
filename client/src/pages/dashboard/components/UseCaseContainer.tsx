@@ -4,51 +4,54 @@ import { motion } from 'framer-motion'
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 
-import { dashboardSub, dashboardTitle, rowContainer } from '../../../FramerAnimations'
+import { dashboardTitle, rowContainer } from '../../../FramerAnimations'
 import { basePath } from '../../../utils/BasePath'
 
-import { RevocationItem } from './RevocationItem'
+// import { RevocationItem } from './RevocationItem'
 import { UseCaseItem } from './UseCaseItem'
 
 export interface Props {
   currentCharacter: CustomCharacter
-  issuedCredentials: any[]
+  issuedCredentials: unknown[]
   completedUseCaseSlugs: string[]
 }
 
-export const UseCaseContainer: React.FC<Props> = ({ currentCharacter, completedUseCaseSlugs, issuedCredentials }) => {
+export const UseCaseContainer: React.FC<Props> = ({ currentCharacter, completedUseCaseSlugs }) => {
   const navigate = useNavigate()
 
   const startUseCase = (slug: string) => {
     navigate(`${basePath}/uc/${slug}`)
   }
+  // eslint-disable-next-line no-console
+  console.log(currentCharacter.useCases)
+  const renderUseCases = currentCharacter.useCases
+    .sort((a, b) => (a.id > b.id ? 1 : -1))
+    .map((item) => {
+      const requiredCredentials: string[] = []
+      // item.screens.forEach(screen => requiredCredentials.push(...(screen.requestOptions?.requestedCredentials.map(item => item.name) ?? [])))
+      item.screens.forEach((screen) =>
+        screen.requestOptions?.requestedCredentials.forEach((cred) => {
+          if (!requiredCredentials.includes(cred.name)) {
+            requiredCredentials.push(cred.name)
+          }
+        })
+      )
 
-  const renderUseCases = currentCharacter.useCases.map((item) => {
-    const requiredCredentials: string[] = []
-    // item.screens.forEach(screen => requiredCredentials.push(...(screen.requestOptions?.requestedCredentials.map(item => item.name) ?? [])))
-    item.screens.forEach((screen) =>
-      screen.requestOptions?.requestedCredentials.forEach((cred) => {
-        if (!requiredCredentials.includes(cred.name)) {
-          requiredCredentials.push(cred.name)
-        }
-      })
-    )
+      const isCompleted = completedUseCaseSlugs.includes(item.id)
 
-    const isCompleted = completedUseCaseSlugs.includes(item.id)
-
-    return (
-      <UseCaseItem
-        key={item.id}
-        slug={item.id}
-        title={item.name}
-        requiredCredentials={requiredCredentials}
-        currentCharacter={currentCharacter}
-        start={startUseCase}
-        isLocked={false}
-        isCompleted={isCompleted}
-      />
-    )
-  })
+      return (
+        <UseCaseItem
+          key={item.id}
+          slug={item.id}
+          title={item.name}
+          requiredCredentials={requiredCredentials}
+          currentCharacter={currentCharacter}
+          start={startUseCase}
+          isLocked={false}
+          isCompleted={isCompleted}
+        />
+      )
+    })
 
   return (
     <div className="flex flex-col mx-4 lg:mx-4 my-2 p-4 md:p-6 lg:p-8 bg-white dark:bg-bcgov-darkgrey dark:text-white rounded-lg shadow-sm">

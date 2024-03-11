@@ -2,7 +2,7 @@ import type { CustomCharacter } from '../../../slices/types'
 
 import { trackSelfDescribingEvent } from '@snowplow/browser-tracker'
 import { motion } from 'framer-motion'
-import { head, startCase } from 'lodash'
+import { startCase } from 'lodash'
 import React from 'react'
 
 import { rowFadeX } from '../../../FramerAnimations'
@@ -78,19 +78,22 @@ export const UseCaseItem: React.FC<Props> = ({
           </div>
 
           <div className="w-2/3 xl:w-1/3 flex flex-col">
-            <h2 className="text-sm xl:text-base font-semibold mb-2">You'll be asked to share</h2>
-            {requiredCredentials.map((item) => {
-              return (
-                <div key={item} className={`flex flex-row mb-2`}>
-                  <img
-                    className="w-4 h-4 lg:w-6 lg:h-6 mx-2"
-                    src={prependApiUrl(getCredIcon(currentCharacter, item))}
-                    alt="credential icon"
-                  />
-                  <p className="text-xs sxl:text-sm">{startCase(item)}&nbsp;</p>
-                </div>
-              )
-            })}
+            <h2 className="text-sm xl:text-base font-semibold mb-2">
+              {title === 'Charlie' ? "You'll be asked to share" : 'In progress'}
+            </h2>
+            {title === 'Charlie' &&
+              requiredCredentials.map((item) => {
+                return (
+                  <div key={item} className={`flex flex-row mb-2`}>
+                    <img
+                      className="w-4 h-4 lg:w-6 lg:h-6 mx-2"
+                      src={prependApiUrl(getCredIcon(currentCharacter, item))}
+                      alt="credential icon"
+                    />
+                    <p className="text-xs sxl:text-sm">{startCase(item)}&nbsp;</p>
+                  </div>
+                )
+              })}
             <div className="flex flex-1 items-end justify-end">
               <StartButton
                 onClick={() => {
@@ -107,7 +110,7 @@ export const UseCaseItem: React.FC<Props> = ({
                   start(slug)
                 }}
                 text={'START'}
-                disabled={isLocked}
+                disabled={title === 'Charlie' ? isLocked : true}
                 isCompleted={isCompleted}
               />
             </div>

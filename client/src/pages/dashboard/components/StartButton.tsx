@@ -29,8 +29,8 @@ export const StartButton: React.FC<Props> = ({ text, loading, onClick, disabled,
         data-cy="select-use-case"
       >
         {disabled && (
-          <span className="hidden sm:block tooltip rounded shadow-lg p-1 bg-bcgov-darkgrey text-white w-48 -mt-16">
-            You haven't unlocked the required credentials yet.
+          <span className="hidden sm:block tooltip rounded shadow-lg p-1 bg-bcgov-darkgrey text-white w-48 -mt-24">
+            Work in Progress, Launching Imminently!
           </span>
         )}
 
