@@ -36,7 +36,7 @@ export const StarterCredentials: React.FC<Props> = ({ credentials }) => {
               <img className="h-8 m-auto" src={prependApiUrl(item.icon)} alt="icon" />
             </div>
             <div className="flex-1 px-4 justify-self-start dark:text-white text-sm sm:text-base">
-              <p>{startCase(item.name)}</p>
+              <p>{startCase(item.name.toUpperCase())}</p>
             </div>
             <StateIndicator completed={completed} />
           </div>

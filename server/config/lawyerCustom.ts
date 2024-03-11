@@ -56,18 +56,18 @@ export const lawyerCustom: CustomCharacter = {
     {
       screenId: 'PICK_CHARACTER',
       title: 'Meet Bob',
-      text: "Meet Bob Johnson (that's you in this demo!). Bob is a construction engineer and working in a company. He owns a Ford Mustang. He feels having digital credentials is way easier and wants to get them.",
+      text: "Meet Bob Johnson (that's you in this demo!). Bob is a construction engineer and working in a company. He owns a Ford Mustang. He feels having vehihcle credentials is way easier and wants to get them.",
     },
     {
       screenId: 'SETUP_START',
       title: "Let's get started!",
-      text: 'FHWA is a new app for storing and using credentials on your smartphone. Credentials are things like IDs, licenses and diplomas. \nUsing your FHWA is fast and simple. In the future it can be used online and in person. You approve every use, and share only what is needed. \nIn this demo, you will use two credentials to prove who you are and access court materials online instead of in-person.',
+      text: 'FHWA Vehicle End is a new mobile application that allows you to save and use credentials on your car. This demo will walk you through two scenarios that will eventually be implemented in real-world applications.',
       image: '/public/common/FHWA-Logo.svg',
     },
     {
       screenId: 'CHOOSE_WALLET',
-      title: 'Install FHWA',
-      text: 'First, install the FHWA app onto your smartphone. Select the button below for instructions and the next step.',
+      title: 'Install FHWA Vehicle End',
+      text: 'First, install the FHWA Vehicle End app onto your smartphone. Select the button below for instructions and the next step.',
       image: '/public/common/app-store-screenshots.png',
     },
     {
@@ -80,7 +80,7 @@ export const lawyerCustom: CustomCharacter = {
     {
       screenId: 'ACCEPT_CREDENTIAL',
       title: 'Accept your vehicle credential',
-      text: "Your wallet now has a secure and private connection with CA. You should have received an offer in FHWA for a vehicle credential.\nReview what they are sending, and choose 'Accept offer'.",
+      text: "Your wallet now has a secure and private connection with CA. You should have received an offer in FHWA Vehicle End application for a vehicle credential.\nReview what they are sending, and choose 'Accept offer'.",
       image: '/public/lawyer2/bob_onboarding.svg',
       credentials: [
         {
@@ -97,12 +97,12 @@ export const lawyerCustom: CustomCharacter = {
               value: '5XYZWDLA9DG123456',
             },
             {
-              name: 'vehicle_name',
+              name: 'vehicle_information',
               value: 'Ford Mustang 2017',
             },
             {
               name: 'issued',
-              value: '03/04/2024',
+              value: new Date().toISOString(),
             },
             {
               name: 'owner_address',
@@ -113,7 +113,7 @@ export const lawyerCustom: CustomCharacter = {
               value: 'Bob Johnson',
             },
             {
-              name: 'region_issued',
+              name: 'state_issued',
               value: 'Florida',
             },
             {
@@ -131,7 +131,7 @@ export const lawyerCustom: CustomCharacter = {
     {
       screenId: 'SETUP_COMPLETED',
       title: "You're all set!",
-      text: 'Congratulations, you’ve just received your first digital credentials. They are safely stored in your wallet and ready to be used. So, what are you waiting for? Let’s go!',
+      text: 'Congratulations, you’ve just received your first vehihcle credentials. They are safely stored in your wallet and ready to be used. So, what are you waiting for? Let’s go!',
       image: '/public/lawyer2/bob_onboarding.svg',
     },
   ],
@@ -156,7 +156,7 @@ export const lawyerCustom: CustomCharacter = {
         {
           screenId: 'PROOF',
           title: 'Confirm the information to send',
-          text: "FHWA will now ask you to confirm what to send. Notice how it will only share if the credential has expired, not even the expiry date itself gets shared. You don't have to share anything else for it to be trustable.",
+          text: "FHWA Vehicle End will now ask you to confirm what to send. Notice how it will only share if the credential has expired, not even the expiry date itself gets shared. You don't have to share anything else for it to be trustable.",
           requestOptions: {
             title: 'Cool Clothes Online Request',
             text: 'Cool Clothes Online would like some of your personal information.',
@@ -184,7 +184,7 @@ export const lawyerCustom: CustomCharacter = {
         {
           screenId: 'START',
           title: 'Verify credentials',
-          text: "Charlie wants to connect with you but wants to first confirm if they’re interacting with the correct vehicle. In this example, we'll present some info from our Vehicle Credential, but just what's needed to confirm our identity.",
+          text: "Charlie wants to connect with you but wants to first confirm if they’re interacting with the correct vehicle. In this example, you'll need to present some information from your Vehicle Credential, but just what's needed to verify your credentials.",
           image: '/public/lawyer2/bob_onboarding.svg',
         },
         {
@@ -197,7 +197,7 @@ export const lawyerCustom: CustomCharacter = {
         {
           screenId: 'PROOF',
           title: 'Confirm the information to send',
-          text: "Charlie will now ask you to confirm what to send for the proof request. Notice how they only need some of your attributes and they will also display it on the screen. By providing anything from your vehicle credential, they automatically know your credential hasn't been revoked.",
+          text: "Charlie will now ask you to confirm what to send for the proof request. Notice how they only need some of your attributes and they will also display it on the screen. By providing anything from your vehicle credential, they automatically know your credential hasn't been expired.",
           requestOptions: {
             title: 'Credential Request',
             text: 'Charlie would like some of your personal information.',
@@ -205,7 +205,7 @@ export const lawyerCustom: CustomCharacter = {
               {
                 icon: '/public/student/useCases/school/icon-university-card.png',
                 name: process.env.CRED_NAME ?? '',
-                properties: ['vehicle_owner', 'vehicle_name'],
+                properties: ['vehicle_owner', 'vehicle_information', 'state_issued'],
                 predicates: {
                   name: 'expiry_date',
                   type: '>=',

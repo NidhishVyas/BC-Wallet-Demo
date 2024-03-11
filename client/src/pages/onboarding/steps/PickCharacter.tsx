@@ -24,7 +24,7 @@ export const PickCharacter: React.FC<Props> = ({ currentCharacter, characters, t
   const dispatch = useAppDispatch()
   const darkMode = useDarkMode()
   const defaultTitle = `Who do you want to be today?`
-  const defaultText = `It’s time to pick your character. Every character has its own set of use cases, which explore the power of digital credentials. Don’t worry, you can change your character later.`
+  const defaultText = `It’s time to pick your character. Every character has its own set of use cases, which explore the power of vehihcle credentials. Don’t worry, you can change your character later.`
   const titleText = title
   const mainText = text
 

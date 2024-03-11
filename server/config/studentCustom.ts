@@ -56,18 +56,18 @@ export const studentCustom: CustomCharacter = {
     {
       screenId: 'PICK_CHARACTER',
       title: 'Meet Alice',
-      text: "Meet Alice Smith (that's you in this demo!). Alice is a student at a college. To help make student life easier, Alice took a Toyato vehicle and now needs digital credentials to verify her vehicle credential.",
+      text: "Meet Alice Smith (that's you in this demo!). Alice is a student at a college. To help make student life easier, Alice took a Toyato vehicle and now needs vehihcle credentials to verify her vehicle credential.",
     },
     {
       screenId: 'SETUP_START',
       title: "Let's get started!",
-      text: 'FHWA is a new app for storing and using credentials on your smartphone. Credentials are things like IDs, licenses and diplomas. \nUsing your FHWA is fast and simple. In the future it can be used online and in person. You approve every use, and share only what is needed. \nIn this demo, you will use two credentials to prove who you are and access court materials online instead of in-person.',
+      text: 'FHWA Vehicle End is a new mobile application that allows you to save and use credentials on your car. This demo will walk you through two scenarios that will eventually be implemented in real-world applications.',
       image: '/public/common/FHWA-Logo.svg',
     },
     {
       screenId: 'CHOOSE_WALLET',
-      title: 'Install FHWA',
-      text: 'First, install the FHWA app onto your smartphone. Select the button below for instructions and the next step.',
+      title: 'Install FHWA Vehicle End',
+      text: 'First, install the FHWA Vehicle End app onto your smartphone. Select the button below for instructions and the next step.',
       image: '/public/common/app-store-screenshots.png',
     },
     {
@@ -80,7 +80,7 @@ export const studentCustom: CustomCharacter = {
     {
       screenId: 'ACCEPT_CREDENTIAL',
       title: 'Accept your vehicle credential',
-      text: "Your wallet now has a secure and private connection with CA. You should have received an offer in FHWA for a vehicle credential.\nReview what they are sending, and choose 'Accept offer'.",
+      text: "Your wallet now has a secure and private connection with CA. You should have received an offer in FHWA Vehicle End application for a vehicle credential.\nReview what they are sending, and choose 'Accept offer'.",
       image: '/public/student/onboarding-connect-light.svg',
       credentials: [
         {
@@ -89,12 +89,12 @@ export const studentCustom: CustomCharacter = {
           icon: '/public/student/icon-student.svg',
           attributes: [
             {
-              name: 'vehicle_name',
+              name: 'vehicle_information',
               value: 'Toyato Camry 2021',
             },
             {
               name: 'issued',
-              value: '03-10-2024',
+              value: new Date().toISOString(),
             },
             {
               name: 'owner_address',
@@ -113,7 +113,7 @@ export const studentCustom: CustomCharacter = {
               value: 'Alice',
             },
             {
-              name: 'region_issued',
+              name: 'state_issued',
               value: 'Texas',
             },
             {
@@ -131,7 +131,7 @@ export const studentCustom: CustomCharacter = {
     {
       screenId: 'SETUP_COMPLETED',
       title: "You're all set!",
-      text: 'Congratulations, you’ve just received your first digital credentials. They are safely stored in your wallet and ready to be used. So, what are you waiting for? Let’s go!',
+      text: 'Congratulations, you’ve just received your first vehihcle credentials. They are safely stored in your wallet and ready to be used. So, what are you waiting for? Let’s go!',
       image: '/public/student/onboarding-connect-light.svg',
     },
   ],
@@ -156,7 +156,7 @@ export const studentCustom: CustomCharacter = {
         {
           screenId: 'PROOF',
           title: 'Confirm the information to send',
-          text: "FHWA will now ask you to confirm what to send. Notice how it will only share if the credential has expired, not even the expiry date itself gets shared. You don't have to share anything else for it to be trustable.",
+          text: "FHWA Vehicle End will now ask you to confirm what to send. Notice how it will only share if the credential has expired, not even the expiry date itself gets shared. You don't have to share anything else for it to be trustable.",
           requestOptions: {
             title: 'Connect with Infrastructure',
             text: 'Infrastructure wants to connect with you to send information.',
@@ -184,20 +184,20 @@ export const studentCustom: CustomCharacter = {
         {
           screenId: 'START',
           title: 'Verify credentials',
-          text: "Alice has lots of work to do, and needs a study room for some peace and quiet. In this example, we'll present some info from our Student Card, but just what's needed to book the room.",
+          text: "Charlie wants to connect with you but wants to first confirm if they’re interacting with the correct vehicle. In this example, you'll need to present some information from your Vehicle Credential, but just what's needed to verify your credentials.",
           image: '/public/student/bob-onboarding-completed.svg',
         },
         {
           screenId: 'CONNECTION',
           title: 'Start verifying the credentials',
-          text: "Imagine you've have connected with a car. Now they just need to confirm a few details. Scan the QR code to continue.",
+          text: "Imagine you've connected with Charlie. Now they just need to confirm a few details. Scan the QR code to continue.",
           image: '/public/common/background.png',
           verifier: { name: 'Charlie', icon: '/public/lawyer2/carfront.svg' },
         },
         {
           screenId: 'PROOF',
           title: 'Confirm the information to send',
-          text: "FHWA will now ask you to confirm what to send for the booking. Notice how they only need your first name so they can display it on the booking screen. By providing anything from your student card, they automatically know your student card hasn't been revoked.",
+          text: "Charlie will now ask you to confirm what to send for the proof request. Notice how they only need some of your attributes and they will also display it on the screen. By providing anything from your vehicle credential, they automatically know your credential hasn't been expiredinfo.",
           requestOptions: {
             title: 'Credential Request',
             text: 'Charlie would like some of your personal information.',
@@ -205,7 +205,7 @@ export const studentCustom: CustomCharacter = {
               {
                 icon: '/public/student/useCases/school/icon-university-card.png',
                 name: process.env.CRED_NAME ?? '',
-                properties: ['vehicle_owner', 'vehicle_name'],
+                properties: ['vehicle_owner', 'vehicle_information', 'state_issued'],
                 predicates: {
                   name: 'expiry_date',
                   type: '>=',
@@ -218,7 +218,7 @@ export const studentCustom: CustomCharacter = {
         {
           screenId: 'STEP_END',
           title: "You're done!",
-          text: "The room is booked. Just by proving your first name, Best BC College could trust you are a current student, and could let others know there's a booking without revealing too much about you.",
+          text: "You are now verified. Just by proving your credential, Charlie could trust you are a verified vehicle without revealing too much about you and all your credential attributes.",
           image: '/public/student/student-accepted.svg',
         },
       ],
