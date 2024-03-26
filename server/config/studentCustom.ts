@@ -56,7 +56,7 @@ export const studentCustom: CustomCharacter = {
     {
       screenId: 'PICK_CHARACTER',
       title: 'Meet Alice',
-      text: "Meet Alice Smith (that's you in this demo!). Alice is a student at a college. To help make student life easier, Alice took a Toyato vehicle and now needs vehihcle credentials to verify her vehicle credential.",
+      text: "Meet Alice Smith (that's you in this demo!). Alice is a student at a college. To help make student life easier, Alice took a Toyato vehicle and now needs vehicle credentials to verify her vehicle credential.",
     },
     {
       screenId: 'SETUP_START',
@@ -131,7 +131,7 @@ export const studentCustom: CustomCharacter = {
     {
       screenId: 'SETUP_COMPLETED',
       title: "You're all set!",
-      text: 'Congratulations, you’ve just received your first vehihcle credentials. They are safely stored in your wallet and ready to be used. So, what are you waiting for? Let’s go!',
+      text: 'Congratulations, you’ve just received your first vehicle credentials. They are safely stored in your wallet and ready to be used. So, what are you waiting for? Let’s go!',
       image: '/public/student/onboarding-connect-light.svg',
     },
   ],
@@ -153,22 +153,22 @@ export const studentCustom: CustomCharacter = {
           image: '/public/common/background.png',
           verifier: { name: 'Infrastructure', icon: '/public/student/useCases/store/logo-university.png' },
         },
-        {
-          screenId: 'PROOF',
-          title: 'Confirm the information to send',
-          text: "FHWA Vehicle End will now ask you to confirm what to send. Notice how it will only share if the credential has expired, not even the expiry date itself gets shared. You don't have to share anything else for it to be trustable.",
-          requestOptions: {
-            title: 'Connect with Infrastructure',
-            text: 'Infrastructure wants to connect with you to send information.',
-            requestedCredentials: [
-              {
-                icon: '/public/student/useCases/school/icon-university-card.png',
-                name: process.env.CRED_NAME ?? '',
-                properties: ['vehicle_owner'],
-              },
-            ],
-          },
-        },
+        // {
+        //   screenId: 'PROOF',
+        //   title: 'Confirm the information to send',
+        //   text: "FHWA Vehicle End will now ask you to confirm what to send. Notice how it will only share if the credential has expired, not even the expiry date itself gets shared. You don't have to share anything else for it to be trustable.",
+        //   requestOptions: {
+        //     title: 'Connect with Infrastructure',
+        //     text: 'Infrastructure wants to connect with you to send information.',
+        //     requestedCredentials: [
+        //       {
+        //         icon: '/public/student/useCases/school/icon-university-card.png',
+        //         name: process.env.CRED_NAME ?? '',
+        //         properties: ['vehicle_owner'],
+        //       },
+        //     ],
+        //   },
+        // },
         {
           screenId: 'STEP_END',
           title: "You're done!",

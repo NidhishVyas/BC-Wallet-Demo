@@ -79,7 +79,7 @@ export const UseCaseItem: React.FC<Props> = ({
 
           <div className="w-2/3 xl:w-1/3 flex flex-col">
             <h2 className="text-sm xl:text-base font-semibold mb-2">
-              {title === 'Charlie' ? "You'll be asked to share" : 'In progress'}
+              {title === 'Charlie' ? "You'll be asked to share" : 'Connect with the infrastructure'}
             </h2>
             {title === 'Charlie' &&
               requiredCredentials.map((item) => {
@@ -110,7 +110,8 @@ export const UseCaseItem: React.FC<Props> = ({
                   start(slug)
                 }}
                 text={'START'}
-                disabled={title === 'Charlie' ? isLocked : true}
+                // disabled={title === 'Charlie' ? isLocked : true}
+                disabled={isLocked}
                 isCompleted={isCompleted}
               />
             </div>

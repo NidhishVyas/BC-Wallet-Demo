@@ -56,7 +56,7 @@ export const lawyerCustom: CustomCharacter = {
     {
       screenId: 'PICK_CHARACTER',
       title: 'Meet Bob',
-      text: "Meet Bob Johnson (that's you in this demo!). Bob is a construction engineer and working in a company. He owns a Ford Mustang. He feels having vehihcle credentials is way easier and wants to get them.",
+      text: "Meet Bob Johnson (that's you in this demo!). Bob is a construction engineer and working in a company. He owns a Ford Mustang. He feels having vehicle credentials is way easier and wants to get them.",
     },
     {
       screenId: 'SETUP_START',
@@ -131,7 +131,7 @@ export const lawyerCustom: CustomCharacter = {
     {
       screenId: 'SETUP_COMPLETED',
       title: "You're all set!",
-      text: 'Congratulations, you’ve just received your first vehihcle credentials. They are safely stored in your wallet and ready to be used. So, what are you waiting for? Let’s go!',
+      text: 'Congratulations, you’ve just received your first vehicle credentials. They are safely stored in your wallet and ready to be used. So, what are you waiting for? Let’s go!',
       image: '/public/lawyer2/bob_onboarding.svg',
     },
   ],
@@ -153,22 +153,22 @@ export const lawyerCustom: CustomCharacter = {
           image: '/public/common/background.png',
           verifier: { name: 'Infrastructure', icon: '/public/student/useCases/store/logo-university.png' },
         },
-        {
-          screenId: 'PROOF',
-          title: 'Confirm the information to send',
-          text: "FHWA Vehicle End will now ask you to confirm what to send. Notice how it will only share if the credential has expired, not even the expiry date itself gets shared. You don't have to share anything else for it to be trustable.",
-          requestOptions: {
-            title: 'Cool Clothes Online Request',
-            text: 'Cool Clothes Online would like some of your personal information.',
-            requestedCredentials: [
-              {
-                icon: '/public/student/useCases/school/icon-university-card.png',
-                name: process.env.CRED_NAME ?? '',
-                properties: ['vehicle_owner'],
-              },
-            ],
-          },
-        },
+        // {
+        //   screenId: 'PROOF',
+        //   title: 'Confirm the information to send',
+        //   text: "FHWA Vehicle End will now ask you to confirm what to send. Notice how it will only share if the credential has expired, not even the expiry date itself gets shared. You don't have to share anything else for it to be trustable.",
+        //   requestOptions: {
+        //     title: 'Cool Clothes Online Request',
+        //     text: 'Cool Clothes Online would like some of your personal information.',
+        //     requestedCredentials: [
+        //       {
+        //         icon: '/public/student/useCases/school/icon-university-card.png',
+        //         name: process.env.CRED_NAME ?? '',
+        //         properties: ['vehicle_owner'],
+        //       },
+        //     ],
+        //   },
+        // },
         {
           screenId: 'STEP_END',
           title: "You're done!",

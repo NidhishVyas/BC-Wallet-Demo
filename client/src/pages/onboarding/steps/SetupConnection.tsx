@@ -148,7 +148,6 @@ export const SetupConnection: React.FC<Props> = ({
       <StepInformation title={title} text={text} />
       <div
         className="bg-contain position-relative bg-center bg-no-repeat h-full flex justify-center"
-        style={{ backgroundImage: `url(${prependApiUrl(backgroundImage as string)})` }}
       >
         <div className="max-w-xs flex flex-col self-center items-center bg-white rounded-lg p-4  dark:text-black">
           <p className="text-center mb-2">Scan the QR Code below with your digital wallet.</p>
