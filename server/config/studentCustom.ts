@@ -10,7 +10,7 @@ const todayDate = parseInt(
 export const studentCustom: CustomCharacter = {
   name: 'Alice Smith',
   type: 'Toyota Camry 2021',
-  image: '/public/student/student.svg',
+  image: '/public/student/yellow_front.svg',
   revocationInfo: [
     {
       credentialName: 'Proof',
@@ -56,7 +56,7 @@ export const studentCustom: CustomCharacter = {
     {
       screenId: 'PICK_CHARACTER',
       title: 'Meet Alice',
-      text: "Meet Alice Smith (that's you in this demo!). Alice is a student at a college. To help make student life easier, Alice took a Toyato vehicle and now needs vehicle credentials to verify her vehicle credential.",
+      text: "Meet Alice (that's you in this demo!). Alice owns Toyato vehicle and now needs vehicle credentials to verify her vehicle credential.",
     },
     {
       screenId: 'SETUP_START',
@@ -74,14 +74,14 @@ export const studentCustom: CustomCharacter = {
       screenId: 'CONNECT',
       title: 'Connect with VDKMS CA (Certificate Authority)',
       text: 'Imagine, as Alice, you are connected with a VDKMS CA. They want to offer you your credentials. Use your app to scan the QR code from the website.',
-      image: '/public/student/onboarding-connect-light.svg',
+      image: '/public/student/yellow_side.svg',
       issuer_name: 'FHWA VDKMS CA',
     },
     {
       screenId: 'ACCEPT_CREDENTIAL',
       title: 'Accept your vehicle credential',
       text: "Your wallet now has a secure and private connection with CA. You should have received an offer in FHWA Vehicle End application for a vehicle credential.\nReview what they are sending, and choose 'Accept offer'.",
-      image: '/public/student/onboarding-connect-light.svg',
+      image: '/public/student/yellow_side.svg',
       credentials: [
         {
           name: process.env.SCHEMA_NAME ?? '',
@@ -132,7 +132,7 @@ export const studentCustom: CustomCharacter = {
       screenId: 'SETUP_COMPLETED',
       title: "You're all set!",
       text: 'Congratulations, you’ve just received your first vehicle credentials. They are safely stored in your wallet and ready to be used. So, what are you waiting for? Let’s go!',
-      image: '/public/student/onboarding-connect-light.svg',
+      image: '/public/student/yellow_done.svg',
     },
   ],
   useCases: [
@@ -144,12 +144,12 @@ export const studentCustom: CustomCharacter = {
           screenId: 'START',
           title: 'Connecting with infrastructure',
           text: "Alice (that's you in this demo!) needs to send her credentials to connect to the infrastrcture. In this example, you will just send the infrastructure your complete credentials.",
-          image: '/public/student/useCases/store/card-school.svg',
+          image: '/public/student/yellow_done.svg',
         },
         {
           screenId: 'CONNECTION',
-          title: "Start proving you're a student",
-          text: "Imagine, as Alice, you are in the checkout process for Cool Clothes Online. They're offering you a 15% discount on your purchase if you can prove you're a student. First, scan the QR code.",
+          title: "Connect to the Infrastructure",
+          text: "Imagine, as Alice, you want to connect to the infrastructure. First, scan the QR code and you will be able to communicate with the infrastructure.",
           image: '/public/common/background.png',
           verifier: { name: 'Infrastructure', icon: '/public/student/useCases/store/logo-university.png' },
         },
@@ -172,8 +172,8 @@ export const studentCustom: CustomCharacter = {
         {
           screenId: 'STEP_END',
           title: "You're done!",
-          text: "You proved that you're a student, and Cool Clothes Online gave you the discount. It only took a few seconds, you revealed minimal information, and Cool Clothes Online could easily and automatically trust what you sent.",
-          image: '/public/student/student-accepted.svg',
+          text: "You are now connected to the infrastructure. You will now recieve messages about your environment conditions. You can also send messages back. ",
+          image: '/public/student/yellow_final.svg',
         },
       ],
     },
@@ -185,7 +185,7 @@ export const studentCustom: CustomCharacter = {
           screenId: 'START',
           title: 'Verify credentials',
           text: "Charlie wants to connect with you but wants to first confirm if they’re interacting with the correct vehicle. In this example, you'll need to present some information from your Vehicle Credential, but just what's needed to verify your credentials.",
-          image: '/public/student/bob-onboarding-completed.svg',
+          image: '/public/student/yellow_done.svg',
         },
         {
           screenId: 'CONNECTION',
@@ -219,7 +219,7 @@ export const studentCustom: CustomCharacter = {
           screenId: 'STEP_END',
           title: "You're done!",
           text: "You are now verified. Just by proving your credential, Charlie could trust you are a verified vehicle without revealing too much about you and all your credential attributes.",
-          image: '/public/student/student-accepted.svg',
+          image: '/public/student/yellow_final.svg',
         },
       ],
     },

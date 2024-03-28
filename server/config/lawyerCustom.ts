@@ -10,7 +10,7 @@ const todayDate = parseInt(
 export const lawyerCustom: CustomCharacter = {
   name: 'Bob Johnson',
   type: 'Ford Mustang 2017',
-  image: '/public/lawyer2/bob_4.svg',
+  image: '/public/lawyer2/blue_front.svg',
   revocationInfo: [
     {
       credentialName: 'Proof',
@@ -56,7 +56,7 @@ export const lawyerCustom: CustomCharacter = {
     {
       screenId: 'PICK_CHARACTER',
       title: 'Meet Bob',
-      text: "Meet Bob Johnson (that's you in this demo!). Bob is a construction engineer and working in a company. He owns a Ford Mustang. He feels having vehicle credentials is way easier and wants to get them.",
+      text: "Meet Bob (that's you in this demo!). Bob owns a Ford Mustang. He feels getting vehicle credentials will make his life easier and wants to get them.",
     },
     {
       screenId: 'SETUP_START',
@@ -74,14 +74,14 @@ export const lawyerCustom: CustomCharacter = {
       screenId: 'CONNECT',
       title: 'Connect with CA (Certificate Authority)',
       text: 'Imagine, as Bob, you are connected with a CA. They want to offer you your credentials. Use your app to scan the QR code from the website.',
-      image: '/public/lawyer2/bob_onboarding.svg',
+      image: '/public/lawyer2/blue_side.svg',
       issuer_name: 'FHWA VDKMS CA',
     },
     {
       screenId: 'ACCEPT_CREDENTIAL',
       title: 'Accept your vehicle credential',
       text: "Your wallet now has a secure and private connection with CA. You should have received an offer in FHWA Vehicle End application for a vehicle credential.\nReview what they are sending, and choose 'Accept offer'.",
-      image: '/public/lawyer2/bob_onboarding.svg',
+      image: '/public/lawyer2/blue_side.svg',
       credentials: [
         {
           name: process.env.SCHEMA_NAME ?? '',
@@ -132,7 +132,7 @@ export const lawyerCustom: CustomCharacter = {
       screenId: 'SETUP_COMPLETED',
       title: "You're all set!",
       text: 'Congratulations, you’ve just received your first vehicle credentials. They are safely stored in your wallet and ready to be used. So, what are you waiting for? Let’s go!',
-      image: '/public/lawyer2/bob_onboarding.svg',
+      image: '/public/lawyer2/blue_done.svg',
     },
   ],
   useCases: [
@@ -143,13 +143,13 @@ export const lawyerCustom: CustomCharacter = {
         {
           screenId: 'START',
           title: 'Connecting with infrastructure',
-          text: "Alice Smith (that's you in this demo!) needs to send her credentials to connect to the infrastrcture. In this example, you will just send the infrastructure your complete credentials.",
-          image: '/public/student/useCases/store/card-school.svg',
+          text: "Bob (that's you in this demo!) needs to send to connect to the infrastrcture. In this example, you will just connect to the infrastructure without sending your credentials.",
+          image: '/public/lawyer2/blue_done.svg',
         },
         {
           screenId: 'CONNECTION',
-          title: "Start proving you're a student",
-          text: "Imagine, as Alice, you are in the checkout process for Cool Clothes Online. They're offering you a 15% discount on your purchase if you can prove you're a student. First, scan the QR code.",
+          title: "Connect to the Infrastructure",
+          text: "Imagine, as Bob, you want to connect to the infrastructure. First, scan the QR code and you will be able to communicate with the infrastructure.",
           image: '/public/common/background.png',
           verifier: { name: 'Infrastructure', icon: '/public/student/useCases/store/logo-university.png' },
         },
@@ -172,8 +172,8 @@ export const lawyerCustom: CustomCharacter = {
         {
           screenId: 'STEP_END',
           title: "You're done!",
-          text: "You proved that you're a student, and Cool Clothes Online gave you the discount. It only took a few seconds, you revealed minimal information, and Cool Clothes Online could easily and automatically trust what you sent.",
-          image: '/public/student/student-accepted.svg',
+          text: "You are now connected to the infrastructure. You will now recieve messages about your environment conditions. You can also send messages back. ",
+          image: '/public/lawyer2/blue_final.svg',
         },
       ],
     },
@@ -185,7 +185,7 @@ export const lawyerCustom: CustomCharacter = {
           screenId: 'START',
           title: 'Verify credentials',
           text: "Charlie wants to connect with you but wants to first confirm if they’re interacting with the correct vehicle. In this example, you'll need to present some information from your Vehicle Credential, but just what's needed to verify your credentials.",
-          image: '/public/lawyer2/bob_onboarding.svg',
+          image: '/public/lawyer2/blue_done.svg',
         },
         {
           screenId: 'CONNECTION',
@@ -219,7 +219,7 @@ export const lawyerCustom: CustomCharacter = {
           screenId: 'STEP_END',
           title: "You're done!",
           text: 'You are now verified. Just by proving your credential, Charlie could trust you are a verified vehicle without revealing too much about you and all your credential attributes.',
-          image: '/public/lawyer2/bob_done.svg',
+          image: '/public/lawyer2/blue_final.svg',
         },
       ],
     },
