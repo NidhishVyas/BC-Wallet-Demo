@@ -8,6 +8,19 @@ lerna-debug.log*
 # Diagnostic reports (https://nodejs.org/api/report.html)
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
 
+
+server/src/public/lawyer2/blue_final.svgZone.Identifier
+server/src/public/lawyer2/blue_done.svgZone.Identifier
+server/src/public/lawyer2/blue_front.svgZone.Identifier
+server/src/public/lawyer2/blue_side.svgZone.Identifier
+
+server/src/public/student/orange_car_front.svgZone.Identifier
+server/src/public/student/orange_car_side.svgZone.Identifier
+
+server/src/public/student/yellow_done.svgZone.Identifier
+server/src/public/student/yellow_final.svgZone.Identifier
+server/src/public/student/yellow_front.svgZone.Identifier
+server/src/public/student/yellow_side.svgZone.Identifier
 # Runtime data
 pids
 *.pid

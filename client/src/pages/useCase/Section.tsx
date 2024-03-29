@@ -26,8 +26,8 @@ import { StepConnection } from './steps/StepConnection'
 import { StepEnd } from './steps/StepEnd'
 import { StepInformation } from './steps/StepInformation'
 import { StepProof } from './steps/StepProof'
+import { StepProofExpired } from './steps/StepProofExpired'
 import { StepProofOOB } from './steps/StepProofOOB'
-
 export interface Props {
   section: UseCaseScreen[]
   connection: ConnectionState
@@ -123,14 +123,17 @@ export const Section: React.FC<Props> = ({
         setIsForwardDisabled(true)
       }
     }
-
-    if (step?.screenId.startsWith('PROOF') || step?.screenId.startsWith('PROOF_OOB')) {
+    if (step?.screenId.startsWith('PROOF_EXPIRED')){
+      setIsForwardDisabled(false)
+   }
+    else if (step?.screenId.startsWith('PROOF') || step?.screenId.startsWith('PROOF_OOB')) {
       if (isProofCompleted) {
         setIsForwardDisabled(false)
       } else {
         setIsForwardDisabled(true)
       }
     }
+    
 
     if (step?.screenId.startsWith('CREDENTIAL')) {
       if (credentialsReceived) {
@@ -229,7 +232,20 @@ export const Section: React.FC<Props> = ({
                     proof={proof}
                   />
                 )} */}
-                {step.screenId.startsWith('PROOF') &&
+                {step.screenId.startsWith('PROOF_EXPIRED') &&
+                  step.requestOptions &&
+                  connection.id && (
+                    <StepProofExpired
+                      key={step.screenId}
+                      entityName={verifier.name}
+                      characterType={currentCharacter?.type.toLowerCase()}
+                      proof={proof}
+                      step={step}
+                      connectionId={connection.id}
+                      requestedCredentials={step.requestOptions.requestedCredentials}
+                    />
+                  )}
+                {!step.screenId.endsWith('EXPIRED') && step.screenId.startsWith('PROOF') &&
                   !step.screenId.startsWith('PROOF_OOB') &&
                   step.requestOptions &&
                   connection.id && (
@@ -243,6 +259,7 @@ export const Section: React.FC<Props> = ({
                       requestedCredentials={step.requestOptions.requestedCredentials}
                     />
                   )}
+                
                 {step.screenId.startsWith('PROOF_OOB') && step.requestOptions && (
                   <StepProofOOB
                     key={step.screenId}

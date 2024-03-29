@@ -195,7 +195,7 @@ export const lawyerCustom: CustomCharacter = {
           verifier: { name: 'Charlie', icon: '/public/lawyer2/carfront.svg' },
         },
         {
-          screenId: 'PROOF',
+          screenId: 'PROOF_EXPIRED',
           title: 'Confirm the information to send',
           text: "Charlie will now ask you to confirm what to send for the proof request. Notice how they only need some of your attributes and they will also display it on the screen. By providing anything from your vehicle credential, they automatically know your credential hasn't been expired.",
           requestOptions: {
@@ -218,7 +218,7 @@ export const lawyerCustom: CustomCharacter = {
         {
           screenId: 'STEP_END',
           title: "You're done!",
-          text: 'You are now verified. Just by proving your credential, Charlie could trust you are a verified vehicle without revealing too much about you and all your credential attributes.',
+          text: 'You credential is expired. The demo shows the case when your credentials are expired.',
           image: '/public/lawyer2/blue_final.svg',
         },
       ],
