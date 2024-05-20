@@ -47,7 +47,6 @@ export const SetupConnection: React.FC<Props> = ({
   onConnectionComplete,
 }) => {
   const deepLink = `bcwallet://aries_connection_invitation?${invitationUrl?.split('?')[1]}`
-
   const dispatch = useAppDispatch()
 
   const isCompleted = isConnected(connectionState as string)
@@ -146,9 +145,7 @@ export const SetupConnection: React.FC<Props> = ({
       exit="exit"
     >
       <StepInformation title={title} text={text} />
-      <div
-        className="bg-contain position-relative bg-center bg-no-repeat h-full flex justify-center"
-      >
+      <div className="bg-contain position-relative bg-center bg-no-repeat h-full flex justify-center">
         <div className="max-w-xs flex flex-col self-center items-center bg-white rounded-lg p-4  dark:text-black">
           <p className="text-center mb-2">Scan the QR Code below with your digital wallet.</p>
           <div>{renderQRCode(true)}</div>

@@ -27,7 +27,7 @@ export const createInvitation = async (
 ): Promise<InvitationResult> => {
   const result: AxiosResponse<AriesInvitation> = await apiCall.post('/demo/connections/createInvite')
   const base64Invitation = btoa(JSON.stringify(result.data.invitation))
-  const invitation_url = "http://3.132.214.151" + '?c_i=' + base64Invitation
+  const invitation_url = 'http://18.188.165.212?c_i=' + base64Invitation
 
   const connection_id = result.data.connection_id
   return { invitation_url, connection_id }

@@ -52,7 +52,17 @@ export const StepConnection: React.FC<Props> = ({ step, connection, newConnectio
   }
 
   const renderQRCode = (overlay?: boolean) => {
-    return invitationUrl ? <QRCode invitationUrl={invitationUrl} connectionState={state} overlay={overlay} /> : null
+    return invitationUrl ? (
+      <QRCode
+        invitationUrl={
+          step.verifier?.name == 'Infrastructure'
+            ? 'http://52.14.38.49:8051/?c_i=eyJAdHlwZSI6ICJkaWQ6c292OkJ6Q2JzTlloTXJqSGlxWkRUVUFTSGc7c3BlYy9jb25uZWN0aW9ucy8xLjAvaW52aXRhdGlvbiIsICJAaWQiOiAiMmEwZWQyNjktN2I0Zi00Y2IzLWI0OTItMjRjYWZmNTJmOTEwIiwgImxhYmVsIjogImluZnJhc3RydWN0dXJlIiwgInJlY2lwaWVudEtleXMiOiBbIjhOaUtXZE5KVGpBeGJUZm15ck1HanQ1MW1yRVdBWnlnV0gxZnNQcWRncUZ0Il0sICJzZXJ2aWNlRW5kcG9pbnQiOiAiaHR0cDovLzUyLjE0LjM4LjQ5OjgwNTEifQ=='
+            : invitationUrl
+        }
+        connectionState={state}
+        overlay={overlay}
+      />
+    ) : null
   }
 
   const renderCTA = !isCompleted ? (

@@ -74,14 +74,14 @@ export const lawyerCustom: CustomCharacter = {
       screenId: 'CONNECT',
       title: 'Connect with CA (Certificate Authority)',
       text: 'Imagine, as Bob, you are connected with a CA. They want to offer you your credentials. Use your app to scan the QR code from the website.',
-      image: '/public/lawyer2/blue_side.svg',
+      image: '/public/lawyer2/blue_top.svg',
       issuer_name: 'FHWA VDKMS CA',
     },
     {
       screenId: 'ACCEPT_CREDENTIAL',
       title: 'Accept your vehicle credential',
       text: "Your wallet now has a secure and private connection with CA. You should have received an offer in FHWA Vehicle End application for a vehicle credential.\nReview what they are sending, and choose 'Accept offer'.",
-      image: '/public/lawyer2/blue_side.svg',
+      image: '/public/lawyer2/blue_top.svg',
       credentials: [
         {
           name: process.env.SCHEMA_NAME ?? '',
